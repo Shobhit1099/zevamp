@@ -76,7 +76,7 @@ function Home() {
             size={45}
             src={float1}
           />
-          <Title level={1} style={{ fontWeight: 700 }} className="text-center">
+          <Title level={1} style={{ fontWeight: 700, margin: "0px" }} className="text-center">
             Connect, Learn &#38; Grow
           </Title>
           <Avatar
@@ -263,12 +263,10 @@ function Home() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            marginTop: "15px",
-            marginBottom: "15px"
           }}
           span={24}
         >
-          <Title level={2} style={{ fontWeight: 700 }} className="text-center">
+          <Title level={2} style={{ fontWeight: 700, margin: "0px" }} className="text-center">
             Find out what our amazing users loved <br /> about Zevamp
           </Title>
         </Col>
@@ -294,7 +292,7 @@ function Home() {
           <SwiperCard />
         </Col>
       </Row>
-      <Row gutter={isSmall ? [0, 24] : [0, 48]}>
+      <Row gutter={[0, 48]}>
         <Col
           id="form"
           span={24}
@@ -302,14 +300,14 @@ function Home() {
         >
           <Typeform />
         </Col>
-        <Col span={24}>
+        <Col span={24} style={{marginBottom: "-48px"}}>
           <Row
-            gutter={[0, 12]}
+            gutter={[0, 16]}
             style={{ padding: "15px", backgroundColor: "#011627" }}
           >
             <Col
               span={24}
-              style={{ display: "flex", justifyContent: "center" }}
+              style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}
             >
               <div
                 style={{ fontSize: "24px", color: "white", fontWeight: 500 }}
@@ -351,7 +349,7 @@ function Home() {
                 marginBottom: "6px",
               }}
             >
-              <Row gutter={[24, 0]}>
+              <Row gutter={[24, 0]} style={{marginBottom: "10px"}}>
                 <Col>
                   <a
                     href="https://twitter.com/zevampofficial"
