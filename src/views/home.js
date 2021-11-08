@@ -300,7 +300,7 @@ function Home() {
         >
           <Typeform />
         </Col>
-        <Col span={24} style={{marginBottom: "-48px"}}>
+        <Col span={24} style={isSmall && {marginBottom: "-48px"}}>
           <Row
             gutter={[0, 16]}
             style={{ padding: "15px", backgroundColor: "#011627" }}
