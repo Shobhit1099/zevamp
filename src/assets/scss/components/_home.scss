@@ -1,0 +1,54 @@
+.basic-button {
+  background-color: #ff5c00;
+  border-color: #ff5c00;
+}
+
+.basic-button:hover {
+  background-color: #ff9753;
+  border-color: #ff9753;
+}
+
+.basic-button::selection {
+  background-color: #ff5c00;
+  border-color: #ff5c00;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: white;
+}
+
+.swiper-button-next {
+  color: #ff5c00 !important;
+}
+
+.swiper-button-prev {
+  color: #ff5c00 !important;
+}
+
+.my-form {
+  border: 1px solid #BFBFBF;
+  border-radius: 7px;
+}
+
+.floating {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
