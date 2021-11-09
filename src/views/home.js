@@ -13,7 +13,7 @@ import Playstore from "../assets/images/playstore.png";
 import Testimonial from "../components/testimonial";
 import Roller from "../components/roller";
 import user1 from "../assets/images/users/user1.jpg";
-import user2 from "../assets/images/users/user2.jpg";
+import user2 from "../assets/images/users/user2.jpeg";
 import user3 from "../assets/images/users/user3.png";
 import float1 from "../assets/images/users/float1.jpeg";
 import float2 from "../assets/images/users/float2.jpg";
