@@ -3,7 +3,6 @@ import Logo1 from "../components/logo1";
 import Logo2 from "../components/logo2";
 import { Row, Col, Typography, Card, Button, Avatar, Rate } from "antd";
 import meet from "../assets/images/meet.png";
-import { AiOutlineInstagram } from "react-icons/ai";
 import { FiLinkedin, FiTwitter } from "react-icons/fi";
 import TypeformD from "../components/typeform_desktop";
 import TypeformM from "../components/typeform_mobile";
@@ -11,6 +10,7 @@ import { useMediaQuery } from "react-responsive";
 import SwiperCard from "../components/swiper";
 import "react-multi-carousel/lib/styles.css";
 import Playstore from "../assets/images/playstore.png";
+import { BsInstagram } from "react-icons/bs";
 import Testimonial from "../components/testimonial";
 import Roller from "../components/roller";
 import user1 from "../assets/images/users/user1.jpg";
@@ -83,7 +83,9 @@ function Home() {
             style={{ fontWeight: 700, margin: "0px" }}
             className="text-center"
           >
-            Connect, Learn &#38; Grow
+            Connect, Learn &#38;
+            <br />
+            Grow
           </Title>
           <Avatar
             className="floating"
@@ -298,15 +300,21 @@ function Home() {
             </Col>
           </Row>
         </Col>
+      </Row>
 
-        <Col
-          span={24}
-          style={isSmall ? { display: "block" } : { display: "none" }}
-        >
+      <Row
+        style={
+          isSmall
+            ? { display: "block", margin: "18px 5px 52px 5px" }
+            : { display: "none" }
+        }
+      >
+        <Col span={24}>
           <SwiperCard />
         </Col>
       </Row>
-      <Row gutter={[0, 48]}>
+
+      <Row gutter={[0, 48]} style={{marginTop: "24px"}}>
         <Col
           id="form"
           span={24}
@@ -418,7 +426,7 @@ function Home() {
                       backgroundColor: "#FF5C00",
                     }}
                   >
-                    <AiOutlineInstagram size={20} />
+                    <BsInstagram size={20} />
                   </a>
                 </Col>
               </Row>
@@ -446,7 +454,7 @@ function Home() {
                     style={{
                       margin: "10px 0px",
                       display: "inline-block",
-                      padding: "10px",
+                      padding: "10px 10px 10px 10px",
                       backgroundColor: "#FF5C00",
                       borderRadius: "50%",
                     }}

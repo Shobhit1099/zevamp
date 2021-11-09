@@ -4,11 +4,11 @@ const Logo2 = (props) => {
   return (
     <svg
       width="896"
-      height="1038"
+      height="1028"
       viewBox="0 0 896 1038"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="logo2"
+      className="logo2"
     >
       <circle cx="242.449" cy="313.983" r="124.283" fill={props.fill}></circle>
       <circle cx="652.943" cy="724.471" r="124.283" fill={props.fill}></circle>

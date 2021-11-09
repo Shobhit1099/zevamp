@@ -8,7 +8,7 @@ const { Meta } = Card;
 export default function Testimonial(props) {
   const isSmall = useMediaQuery({ query: "(max-width: 768px)" });
   return (
-    <Card hoverable style={{ maxWidth: 300, margin: "0 auto" }}>
+    <Card hoverable style={{ maxWidth: 300, minWidth: "250px", margin: "0 auto" }}>
       <Meta
         avatar={<Avatar size={40} src={props.image} />}
         title={

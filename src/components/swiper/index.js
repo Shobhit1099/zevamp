@@ -13,17 +13,19 @@ import { useMediaQuery } from "react-responsive";
 SwiperCore.use([Navigation]);
 
 export default function SwiperCard() {
-  const isTooSmall = useMediaQuery({ query: "(max-width: 600px)" });
+  const isTooSmall = useMediaQuery({ query: "(max-width: 576px)" });
+  const isTooMuchSmall = useMediaQuery({ query: "(max-width: 476px)" });
+  const isSmallest = useMediaQuery({ query: "(max-width: 400px)" });
   return (
     <Row>
       <Swiper
+        style={{ padding: "5px 0px" }}
         centeredSlides
-        slidesPerView={isTooSmall ? 1 : 2}
+        slidesPerView={
+          isTooSmall ? (isTooMuchSmall ? (isSmallest ? 1.3 : 1.5) : 1.8) : 2
+        }
         initialSlide="1"
-        spaceBetween={40}
-        navigation={{
-          clickable: true,
-        }}
+        spaceBetween={isTooMuchSmall ? (isSmallest ? 20 : 30) : 40}
         className="mySwiper"
       >
         <Col>
