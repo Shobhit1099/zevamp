@@ -1,15 +1,15 @@
 import { Widget } from "@typeform/embed-react";
 
-const Typeform = () => {
+const TypeformD = () => {
   return (
     <Widget
     style={{ border: "1px solid black" }} 
       id="UelgAMed"
-      height={500}
+      height={600}
       style={{ width: "65%" }}
       className="my-form"
     />
   );
 };
 
-export default Typeform;
+export default TypeformD;

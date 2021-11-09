@@ -5,7 +5,8 @@ import { Row, Col, Typography, Card, Button, Avatar, Rate } from "antd";
 import meet from "../assets/images/meet.png";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { FiLinkedin, FiTwitter } from "react-icons/fi";
-import Typeform from "../components/typeform";
+import TypeformD from "../components/typeform_desktop";
+import TypeformM from "../components/typeform_mobile";
 import { useMediaQuery } from "react-responsive";
 import SwiperCard from "../components/swiper";
 import "react-multi-carousel/lib/styles.css";
@@ -30,6 +31,7 @@ function Home() {
   const isSmall = useMediaQuery({ query: "(max-width: 768px)" });
   const isNotLarge = useMediaQuery({ query: "(max-width: 992px)" });
   const isTooSmall = useMediaQuery({ query: "(max-width: 576px)" });
+  const isBelow1050 = useMediaQuery({ query: "(max-width: 1050px)" });
   return (
     <div>
       <Row
@@ -76,7 +78,11 @@ function Home() {
             size={45}
             src={float1}
           />
-          <Title level={1} style={{ fontWeight: 700, margin: "0px" }} className="text-center">
+          <Title
+            level={1}
+            style={{ fontWeight: 700, margin: "0px" }}
+            className="text-center"
+          >
             Connect, Learn &#38; Grow
           </Title>
           <Avatar
@@ -235,24 +241,28 @@ function Home() {
                 xs={24}
                 style={{ display: "flex", justifyContent: "center" }}
               >
-                <Button
-                  block
-                  className="basic-button"
-                  size="large"
-                  type="primary"
-                  style={{
-                    maxWidth: "190px",
-                    padding: "0px 15px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    height: "50px",
-                    borderRadius: "7px",
-                  }}
-                  href="#form"
-                >
-                  Attend Now
-                </Button>
+                {!isBelow1050 ? (
+                  <Button
+                    block
+                    className="basic-button"
+                    size="large"
+                    type="primary"
+                    style={{
+                      maxWidth: "190px",
+                      padding: "0px 15px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      height: "50px",
+                      borderRadius: "7px",
+                    }}
+                    href="#form"
+                  >
+                    Attend Now
+                  </Button>
+                ) : (
+                  <TypeformM />
+                )}
               </Col>
             </Row>
           </Card>
@@ -266,7 +276,11 @@ function Home() {
           }}
           span={24}
         >
-          <Title level={2} style={{ fontWeight: 700, margin: "0px" }} className="text-center">
+          <Title
+            level={2}
+            style={{ fontWeight: 700, margin: "0px" }}
+            className="text-center"
+          >
             Find out what our amazing users loved <br /> about Zevamp
           </Title>
         </Col>
@@ -296,18 +310,26 @@ function Home() {
         <Col
           id="form"
           span={24}
-          style={{ display: "flex", justifyContent: "center" }}
+          style={
+            isBelow1050
+              ? { display: "none" }
+              : { display: "flex", justifyContent: "center" }
+          }
         >
-          <Typeform />
+          <TypeformD />
         </Col>
-        <Col span={24} style={isSmall && {marginBottom: "-48px"}}>
+        <Col span={24} style={isSmall && { marginBottom: "-48px" }}>
           <Row
             gutter={[0, 16]}
             style={{ padding: "15px", backgroundColor: "#011627" }}
           >
             <Col
               span={24}
-              style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "10px",
+              }}
             >
               <div
                 style={{ fontSize: "24px", color: "white", fontWeight: 500 }}
@@ -349,7 +371,7 @@ function Home() {
                 marginBottom: "6px",
               }}
             >
-              <Row gutter={[24, 0]} style={{marginBottom: "10px"}}>
+              <Row gutter={[24, 0]} style={{ marginBottom: "10px" }}>
                 <Col>
                   <a
                     href="https://twitter.com/zevampofficial"
