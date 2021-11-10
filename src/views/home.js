@@ -83,7 +83,7 @@ function Home() {
             style={{ fontWeight: 700, margin: "0px" }}
             className="text-center"
           >
-            Connect, Learn &#38;
+            Connect, Express &#38;
             <br />
             Grow
           </Title>
