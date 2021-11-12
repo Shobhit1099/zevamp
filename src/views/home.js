@@ -15,10 +15,10 @@ import Testimonial from "../components/testimonial";
 import Roller from "../components/roller";
 import user1 from "../assets/images/users/user1.jpg";
 import user2 from "../assets/images/users/user2.jpeg";
-import user3 from "../assets/images/users/user3.png";
-import float1 from "../assets/images/users/float1.jpeg";
+import user3 from "../assets/images/users/user3.jpg";
+import float1 from "../assets/images/users/float1.jpg";
 import float2 from "../assets/images/users/float2.jpg";
-import float3 from "../assets/images/users/float3.jpeg";
+import float3 from "../assets/images/users/float3.jpg";
 import float4 from "../assets/images/users/float4.jpg";
 import float5 from "../assets/images/users/float5.jpg";
 import float6 from "../assets/images/users/float6.jpg";
@@ -31,6 +31,7 @@ function Home() {
   const isSmall = useMediaQuery({ query: "(max-width: 768px)" });
   const isNotLarge = useMediaQuery({ query: "(max-width: 992px)" });
   const isTooSmall = useMediaQuery({ query: "(max-width: 576px)" });
+  const isBelow530 = useMediaQuery({ query: "(max-width: 530px)" });
   const isBelow1050 = useMediaQuery({ query: "(max-width: 1050px)" });
   return (
     <div>
@@ -52,7 +53,7 @@ function Home() {
             <Logo1 fill="#FF5C00" className={"logo1"} />
           </a>
           <div style={{ color: "#979797", fontWeight: 500 }}>
-            Beta Version 2.0
+            Beta Version
           </div>
         </Col>
 
@@ -78,15 +79,24 @@ function Home() {
             size={45}
             src={float1}
           />
-          <Title
-            level={1}
-            style={{ fontWeight: 700, margin: "0px" }}
-            className="text-center"
-          >
-            Connect, Express &#38;
-            <br />
-            Grow
-          </Title>
+          {isBelow530 ? (
+            <Title
+              level={1}
+              style={{ fontWeight: 700, margin: "0px" }}
+              className="text-center"
+            >
+              Connect, Express &#38; Grow
+            </Title>
+          ) : (
+            <Title
+              level={1}
+              style={{ fontWeight: 700, margin: "0px" }}
+              className="text-center"
+            >
+              Connect, Express &#38;
+              <br /> Grow
+            </Title>
+          )}
           <Avatar
             className="floating"
             style={
@@ -290,13 +300,25 @@ function Home() {
         <Col span={24} style={isSmall && { display: "none" }}>
           <Row gutter={[48, 24]} justify="center">
             <Col>
-              <Testimonial image={user3} name="Sachin Kaul" />
+              <Testimonial
+                image={user1}
+                name="Sachin Kaul"
+                data="Would love to appreciate the idea that addresses some legit student/work life problems in self development and growth. "
+              />
             </Col>
             <Col>
-              <Testimonial image={user2} name="Shivakant" />
+              <Testimonial
+                image={user2}
+                name="Shivansh"
+                data="When the pandemic is limiting socialization, a platform like this can help students and professionals to connect with each other and develop themselves without any restrictions. "
+              />
             </Col>
             <Col>
-              <Testimonial image={user1} name="Shreya" />
+              <Testimonial
+                image={user3}
+                name="Shreya"
+                data="Amazing hour. A great utilization of the online platform."
+              />
             </Col>
           </Row>
         </Col>
@@ -314,7 +336,7 @@ function Home() {
         </Col>
       </Row>
 
-      <Row gutter={[0, 48]} style={{marginTop: "24px"}}>
+      <Row gutter={[0, 48]} style={{ marginTop: "24px" }}>
         <Col
           id="form"
           span={24}
@@ -326,7 +348,7 @@ function Home() {
         >
           <TypeformD />
         </Col>
-        <Col span={24} style={isSmall && { marginBottom: "-48px" }}>
+        <Col span={24} style={{ marginBottom: "-48px" }}>
           <Row
             gutter={[0, 16]}
             style={{ padding: "15px", backgroundColor: "#011627" }}
@@ -436,7 +458,16 @@ function Home() {
 
         <Col span={24}>
           <Row justify="center" gutter={[0, 32]}>
-            <Col md={12} sm={24} xs={24} style={{ backgroundColor: "#F6F6FB" }}>
+            <Col
+              md={12}
+              sm={24}
+              xs={24}
+              style={
+                isSmall
+                  ? { backgroundColor: "#F6F6FB" }
+                  : { backgroundColor: "#F6F6FB", paddingBottom: "24px" }
+              }
+            >
               <div
                 style={{
                   margin: "20px 0px",
@@ -497,7 +528,7 @@ function Home() {
                 </div>
               </div>
             </Col>
-            <Col md={12}>
+            <Col md={12} style={{ paddingBottom: "24px" }}>
               <Row justify="center" align="bottom" style={{ height: "100%" }}>
                 <Col
                   style={{
@@ -521,7 +552,7 @@ function Home() {
                     marginBottom: "30px",
                     display: "flex",
                     justifyContent: "center",
-                    fontSize: "24px",
+                    fontSize: "20px",
                     fontWeight: 500,
                   }}
                 >

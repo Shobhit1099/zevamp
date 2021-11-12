@@ -6,8 +6,8 @@ import "swiper/swiper.min.css";
 import SwiperCore, { Navigation } from "swiper";
 import Testimonial from "../testimonial";
 import user1 from "../../assets/images/users/user1.jpg";
-import user2 from "../../assets/images/users/user2.jpg";
-import user3 from "../../assets/images/users/user3.png";
+import user2 from "../../assets/images/users/user2.jpeg";
+import user3 from "../../assets/images/users/user3.jpg";
 import { useMediaQuery } from "react-responsive";
 
 SwiperCore.use([Navigation]);
@@ -30,17 +30,25 @@ export default function SwiperCard() {
       >
         <Col>
           <SwiperSlide>
-            <Testimonial image={user3} name="Sachin Kaul" />
+            <Testimonial
+              image={user1}
+              name="Sachin Kaul"
+              data="Would love to appreciate the idea that addresses some legit student/work life problems in self development and growth."
+            />
           </SwiperSlide>
         </Col>
         <Col>
           <SwiperSlide>
-            <Testimonial image={user2} name="Shivakant" />
+            <Testimonial
+              image={user2}
+              name="Shivansh"
+              data="When the pandemic is limiting socialization, a platform like this can help students and professionals to connect with each other and develop themselves without any restrictions. "
+            />
           </SwiperSlide>
         </Col>
         <Col>
           <SwiperSlide>
-            <Testimonial image={user1} name="Shreya" />
+            <Testimonial image={user3} name="Shreya" data="Amazing hour. A great utilization of the online platform." />
           </SwiperSlide>
         </Col>
       </Swiper>
