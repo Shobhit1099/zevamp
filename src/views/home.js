@@ -52,9 +52,7 @@ function Home() {
           <a href="#">
             <Logo1 fill="#FF5C00" className={"logo1"} />
           </a>
-          <div style={{ color: "#979797", fontWeight: 500 }}>
-            Beta Version
-          </div>
+          <div style={{ color: "#979797", fontWeight: 500 }}>Beta Version</div>
         </Col>
 
         <Col
@@ -521,7 +519,7 @@ function Home() {
                   >
                     Zevamp brings to you an entirely innovative experience by
                     pairing you with a completely different personality as that
-                    of yours. We carry you the most fantastic video talk with
+                    of yours. We carry you to the most fantastic video talk with
                     them, delivering an experience that can indeed advise your
                     better future.
                   </div>
