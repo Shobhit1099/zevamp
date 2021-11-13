@@ -4,7 +4,7 @@ const TypeformD = () => {
   return (
     <Widget
     style={{ border: "1px solid black" }} 
-      id="UelgAMed"
+      id="IxhcTSuG"
       height={600}
       style={{ width: "65%" }}
       className="my-form"
