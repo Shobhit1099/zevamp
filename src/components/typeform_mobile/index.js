@@ -18,7 +18,7 @@ const TypeformM = (props) => {
         borderRadius: "7px",
       }}
     >
-      Attend Now
+      {props.message}
     </PopupButton>
   );
 };

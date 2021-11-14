@@ -271,7 +271,7 @@ function Home() {
                     Attend Now
                   </Button>
                 ) : (
-                  <TypeformM />
+                  <TypeformM message="Attend Now" />
                 )}
               </Col>
             </Row>
@@ -349,9 +349,24 @@ function Home() {
         <Col
           id="form"
           span={24}
-          style={isSmall ? { display: "flex", justifyContent: "center" } : {display: "none"}}
+          style={
+            isSmall
+              ? {
+                  display: "flex",
+                  padding: "0px 50px",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }
+              : { display: "none" }
+          }
         >
-          <TypeformD />
+          <Title level={2} style={{ fontWeight: 700 }} className="text-center">
+            Interested?
+          </Title>
+          <Title level={3} style={{ fontWeight: 700, marginTop: "5px", marginBottom: "30px" }} className="text-center">
+            Click on the button below to get started.
+          </Title>
+          <TypeformM message="Get Started" />
         </Col>
         <Col span={24} style={{ marginBottom: "-48px" }}>
           <Row
