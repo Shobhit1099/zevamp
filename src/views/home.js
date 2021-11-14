@@ -83,7 +83,7 @@ function Home() {
               style={{ fontWeight: 700, margin: "0px" }}
               className="text-center"
             >
-              Connect, Express &#38; Grow | Zevamp
+              Connect, Express &#38; Grow
             </Title>
           ) : (
             <Title
@@ -92,7 +92,7 @@ function Home() {
               className="text-center"
             >
               Connect, Express &#38;
-              <br /> Grow | Zevamp
+              <br /> Grow
             </Title>
           )}
           <Avatar
@@ -567,9 +567,9 @@ function Home() {
                         }
                   }
                 >
-                  teamzevamp@gmail.com
+                  team@zevamp.com
                   <br />
-                  <div className="text-muted">&copy; 2021 Zevamp</div>
+                  <div className="text-muted font-size-md">&copy; 2021 Zevamp</div>
                 </Col>
               </Row>
             </Col>
