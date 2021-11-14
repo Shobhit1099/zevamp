@@ -346,6 +346,13 @@ function Home() {
         >
           <TypeformD />
         </Col>
+        <Col
+          id="form"
+          span={24}
+          style={isSmall ? { display: "flex", justifyContent: "center" } : {display: "none"}}
+        >
+          <TypeformD />
+        </Col>
         <Col span={24} style={{ marginBottom: "-48px" }}>
           <Row
             gutter={[0, 16]}
@@ -569,7 +576,9 @@ function Home() {
                 >
                   team@zevamp.com
                   <br />
-                  <div className="text-muted font-size-md">&copy; 2021 Zevamp</div>
+                  <div className="text-muted font-size-md">
+                    &copy; 2021 Zevamp
+                  </div>
                 </Col>
               </Row>
             </Col>
