@@ -83,7 +83,7 @@ function Home() {
               style={{ fontWeight: 700, margin: "0px" }}
               className="text-center"
             >
-              Connect, Express &#38; Grow
+              Connect, Express &#38; Grow | Zevamp
             </Title>
           ) : (
             <Title
@@ -92,7 +92,7 @@ function Home() {
               className="text-center"
             >
               Connect, Express &#38;
-              <br /> Grow
+              <br /> Grow | Zevamp
             </Title>
           )}
           <Avatar
@@ -546,15 +546,30 @@ function Home() {
                 </Col>
                 <Col
                   span={24}
-                  style={{
-                    marginBottom: "30px",
-                    display: "flex",
-                    justifyContent: "center",
-                    fontSize: "20px",
-                    fontWeight: 500,
-                  }}
+                  style={
+                    isSmall
+                      ? {
+                          marginTop: "30px",
+                          marginBottom: "15px",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          fontSize: "17px",
+                          fontWeight: 500,
+                        }
+                      : {
+                          marginBottom: "30px",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          fontSize: "18px",
+                          fontWeight: 500,
+                        }
+                  }
                 >
                   teamzevamp@gmail.com
+                  <br />
+                  <div className="text-muted">&copy; 2021 Zevamp</div>
                 </Col>
               </Row>
             </Col>
