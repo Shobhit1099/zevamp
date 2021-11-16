@@ -15,7 +15,7 @@ import Testimonial from "../components/testimonial";
 import Roller from "../components/roller";
 import user1 from "../assets/images/users/user1.jpg";
 import user2 from "../assets/images/users/user2.jpeg";
-import user3 from "../assets/images/users/user3.jpg";
+import user3 from "../assets/images/users/user3.jpeg";
 import float1 from "../assets/images/users/float1.jpg";
 import float2 from "../assets/images/users/float2.jpg";
 import float3 from "../assets/images/users/float3.jpg";

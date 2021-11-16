@@ -7,7 +7,7 @@ import SwiperCore, { Navigation } from "swiper";
 import Testimonial from "../testimonial";
 import user1 from "../../assets/images/users/user1.jpg";
 import user2 from "../../assets/images/users/user2.jpeg";
-import user3 from "../../assets/images/users/user3.jpg";
+import user3 from "../../assets/images/users/user3.jpeg";
 import { useMediaQuery } from "react-responsive";
 
 SwiperCore.use([Navigation]);
