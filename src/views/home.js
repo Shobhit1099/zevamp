@@ -505,7 +505,7 @@ function Home() {
               style={
                 isSmall
                   ? { backgroundColor: "#F6F6FB" }
-                  : { backgroundColor: "#F6F6FB", paddingBottom: "24px" }
+                  : { backgroundColor: "#F6F6FB", paddingBottom: "24px", marginTop: "1px" }
               }
             >
               <div
