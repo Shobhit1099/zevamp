@@ -18,9 +18,18 @@ function Faq() {
       style={{ border: "0px", background: "#F3F5F6", width: "1000px" }}
     >
       <Row gutter={[24, 24]}>
-        <Col lg={6} md={isBelow900 ? 8 : 7} xs={24} style={{display: "flex", justifyContent: "center"}}>
+        <Col
+          lg={6}
+          md={isBelow900 ? 8 : 7}
+          xs={24}
+          style={{ display: "flex", justifyContent: "center" }}
+        >
           {isBelow768 ? (
-            <img src={img2} className="img-fluid" style={{maxHeight: "150px"}} />
+            <img
+              src={img2}
+              className="img-fluid"
+              style={{ maxHeight: "150px" }}
+            />
           ) : (
             <img src={img1} height="330" />
           )}
@@ -47,28 +56,49 @@ function Faq() {
               key="1"
               className="site-collapse-custom-panel"
             >
-              <p>{text}</p>
+              <p>
+                Zevamp brings to you an entirely innovative experience by
+                pairing you with a completely different personality as that of
+                yours. We carry you to the most fantastic video talk with them,
+                delivering an experience that can indeed advise your better
+                future.
+              </p>
             </Panel>
             <Panel
-              header={<b>Lorem ipsum ipsum lorem add here?</b>}
+              header={
+                <b>
+                  Is it necessary to keep my camera switched on throughout the
+                  session?
+                </b>
+              }
               key="2"
               className="site-collapse-custom-panel"
             >
-              <p>{text}</p>
+              <p>No, it is not necessary. But we would prefer you to keep it on for better interaction</p>
             </Panel>
             <Panel
-              header={<b>Lorem ipsum ipsum lorem add here?</b>}
+              header={
+                <b>Can I schedule my meeting as per my choice of time?</b>
+              }
               key="3"
               className="site-collapse-custom-panel"
             >
-              <p>{text}</p>
+              <p>Yes. We at Zevamp care about our users and happy to assist you.</p>
             </Panel>
             <Panel
-              header={<b>Lorem ipsum ipsum lorem add here?</b>}
+              header={
+                <b>
+                  What happens if any of us loses network connection midway?
+                </b>
+              }
               key="4"
               className="site-collapse-custom-panel"
             >
-              <p>{text}</p>
+              <p>
+                Without any hurry, you can rejoin the meet once your
+                connectivity is regained. Else our team will connect to you
+                through a normal voice call and continue the rest of the meet.
+              </p>
             </Panel>
           </Collapse>
         </Col>
