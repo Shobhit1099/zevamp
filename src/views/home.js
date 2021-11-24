@@ -6,6 +6,7 @@ import meet from "../assets/images/meet.png";
 import { FiLinkedin, FiTwitter } from "react-icons/fi";
 import TypeformD from "../components/typeform_desktop";
 import TypeformM from "../components/typeform_mobile";
+import Faq from "../components/faq";
 import { useMediaQuery } from "react-responsive";
 import SwiperCard from "../components/swiper";
 import "react-multi-carousel/lib/styles.css";
@@ -295,23 +296,23 @@ function Home() {
           </Title>
         </Col>
 
-        <Col span={24} style={isSmall && { display: "none" }}>
+        <Col span={24} style={isSmall ? { display: "none" } : {maxWidth: "1000px"}}>
           <Row gutter={[48, 24]} justify="center">
-            <Col>
+            <Col lg={8}>
               <Testimonial
                 image={user1}
                 name="Sachin Kaul"
                 data="Would love to appreciate the idea that addresses some legit student/work life problems in self development and growth. "
               />
             </Col>
-            <Col>
+            <Col lg={8}>
               <Testimonial
                 image={user2}
                 name="Shivansh"
                 data="When the pandemic is limiting socialization, a platform like this can help students and professionals to connect with each other and develop themselves without any restrictions. "
               />
             </Col>
-            <Col>
+            <Col lg={8}>
               <Testimonial
                 image={user3}
                 name="Shreya"
@@ -321,6 +322,8 @@ function Home() {
           </Row>
         </Col>
       </Row>
+
+      <div id="form"></div>
 
       <Row
         style={
@@ -336,7 +339,6 @@ function Home() {
 
       <Row gutter={[0, 48]} style={{ marginTop: "24px" }}>
         <Col
-          id="form"
           span={24}
           style={
             isBelow1050
@@ -346,11 +348,25 @@ function Home() {
         >
           <TypeformD />
         </Col>
+
+        <Col span={24} style={{ display: "flex", justifyContent: "center", marginBottom: "-24px" }}>
+          <Title level={2} style={{ fontWeight: 700 }}>
+            Your Zevamp meet FAQs
+          </Title>
+        </Col>
+
+        <Col
+          id="form"
+          span={24}
+          style={{ display: "flex", justifyContent: "center", padding: "0px 40px" }}
+        >
+          <Faq />
+        </Col>
         <Col
           id="form"
           span={24}
           style={
-            isSmall
+            isBelow1050
               ? {
                   display: "flex",
                   padding: "0px 50px",
@@ -363,7 +379,11 @@ function Home() {
           <Title level={2} style={{ fontWeight: 700 }} className="text-center">
             Interested?
           </Title>
-          <Title level={3} style={{ fontWeight: 700, marginTop: "5px", marginBottom: "30px" }} className="text-center">
+          <Title
+            level={3}
+            style={{ fontWeight: 700, marginTop: "5px", marginBottom: "30px" }}
+            className="text-center"
+          >
             Click on the button below to get started.
           </Title>
           <TypeformM message="Get Started" />
