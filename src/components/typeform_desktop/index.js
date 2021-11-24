@@ -3,6 +3,7 @@ import { Widget } from "@typeform/embed-react";
 const TypeformD = () => {
   return (
     <Widget
+      disableAutoFocus="true"
       id="IxhcTSuG"
       height={600}
       width={1000}

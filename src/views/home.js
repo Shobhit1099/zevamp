@@ -323,8 +323,6 @@ function Home() {
         </Col>
       </Row>
 
-      <div id="form"></div>
-
       <Row
         style={
           isSmall
@@ -336,6 +334,8 @@ function Home() {
           <SwiperCard />
         </Col>
       </Row>
+
+      <div id="form"></div>
 
       <Row gutter={[0, 48]} style={{ marginTop: "24px" }}>
         <Col
@@ -356,14 +356,12 @@ function Home() {
         </Col>
 
         <Col
-          id="form"
           span={24}
           style={{ display: "flex", justifyContent: "center", padding: "0px 40px" }}
         >
           <Faq />
         </Col>
         <Col
-          id="form"
           span={24}
           style={
             isBelow1050
