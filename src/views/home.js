@@ -33,6 +33,7 @@ function Home() {
   const isNotLarge = useMediaQuery({ query: "(max-width: 992px)" });
   const isTooSmall = useMediaQuery({ query: "(max-width: 576px)" });
   const isBelow530 = useMediaQuery({ query: "(max-width: 530px)" });
+  const isBelow450 = useMediaQuery({ query: "(max-width: 450px)" });
   const isBelow1050 = useMediaQuery({ query: "(max-width: 1050px)" });
   return (
     <div>
@@ -296,7 +297,10 @@ function Home() {
           </Title>
         </Col>
 
-        <Col span={24} style={isSmall ? { display: "none" } : {maxWidth: "1000px"}}>
+        <Col
+          span={24}
+          style={isSmall ? { display: "none" } : { maxWidth: "1000px" }}
+        >
           <Row gutter={[48, 24]} justify="center">
             <Col lg={8}>
               <Testimonial
@@ -349,15 +353,42 @@ function Home() {
           <TypeformD />
         </Col>
 
-        <Col span={24} style={{ display: "flex", justifyContent: "center", marginBottom: "-24px" }}>
-          <Title level={2} style={{ fontWeight: 700 }}>
-            Your Zevamp meet FAQs
-          </Title>
+        <Col
+          span={24}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "-24px",
+          }}
+        >
+          {isBelow450 ? (
+            <Title
+              level={2}
+              style={{ fontWeight: 700 }}
+              className="text-center"
+            >
+              Your Zevamp meet
+              <br />
+              FAQs
+            </Title>
+          ) : (
+            <Title
+              level={2}
+              style={{ fontWeight: 700 }}
+              className="text-center"
+            >
+              Your Zevamp meet FAQs
+            </Title>
+          )}
         </Col>
 
         <Col
           span={24}
-          style={{ display: "flex", justifyContent: "center", padding: "0px 40px" }}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            padding: "0px 40px",
+          }}
         >
           <Faq />
         </Col>
@@ -503,7 +534,11 @@ function Home() {
               style={
                 isSmall
                   ? { backgroundColor: "#F6F6FB" }
-                  : { backgroundColor: "#F6F6FB", paddingBottom: "24px", marginTop: "1px" }
+                  : {
+                      backgroundColor: "#F6F6FB",
+                      paddingBottom: "24px",
+                      marginTop: "1px",
+                    }
               }
             >
               <div

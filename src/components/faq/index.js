@@ -28,7 +28,7 @@ function Faq() {
             <img
               src={img2}
               className="img-fluid"
-              style={{ maxHeight: "150px" }}
+              style={{ maxHeight: "160px"}}
             />
           ) : (
             <img src={img1} height="330" />
@@ -52,7 +52,7 @@ function Faq() {
             className="site-collapse-custom-collapse"
           >
             <Panel
-              header={<b>What is Zevamp</b>}
+              header={<b>What is Zevamp?</b>}
               key="1"
               className="site-collapse-custom-panel"
             >
@@ -74,7 +74,7 @@ function Faq() {
               key="2"
               className="site-collapse-custom-panel"
             >
-              <p>No, it is not necessary. But we would prefer you to keep it on for better interaction</p>
+              <p>No, it is not necessary. But we would prefer you to keep it on for better interaction.</p>
             </Panel>
             <Panel
               header={
@@ -83,7 +83,7 @@ function Faq() {
               key="3"
               className="site-collapse-custom-panel"
             >
-              <p>Yes. We at Zevamp care about our users and happy to assist you.</p>
+              <p>Yes. We at Zevamp care about our users and are happy to assist you.</p>
             </Panel>
             <Panel
               header={
