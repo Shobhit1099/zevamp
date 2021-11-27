@@ -1,6 +1,6 @@
 import React from "react";
-import Logo1 from "../components/logo1";
-import Logo2 from "../components/logo2";
+import Logo1 from "../assets/svg/brand-icon.svg";
+import Logo2 from "../assets/svg/brand-icon-small.svg";
 import { Row, Col, Typography, Card, Button, Avatar, Rate } from "antd";
 import meet from "../assets/images/meet.png";
 import { FiLinkedin, FiTwitter } from "react-icons/fi";
@@ -52,9 +52,9 @@ function Home() {
           }}
         >
           <a href="#">
-            <Logo1 fill="#FF5C00" className={"logo1"} />
+            <img src={Logo1} />
           </a>
-          <div style={{ color: "#979797", fontWeight: 500 }}>Beta Version</div>
+          <div style={{ color: "#979797", fontWeight: 500, fontSize: "16px" }}>Beta Version</div>
         </Col>
 
         <Col
@@ -153,7 +153,9 @@ function Home() {
               src={float4}
             />
           </div>
-          <img className="img-fluid" src={meet} alt="google meet" />
+
+          <img className="img-fluid" src={meet} alt="google meet" height="467" width="467" />
+
           <div>
             <Avatar
               className="floating"
@@ -557,13 +559,9 @@ function Home() {
                   <div
                     style={{
                       margin: "10px 0px",
-                      display: "inline-block",
-                      padding: "10px 10px 10px 10px",
-                      backgroundColor: "#FF5C00",
-                      borderRadius: "50%",
                     }}
                   >
-                    <Logo2 fill="#FFFFFF" />
+                    <img src={Logo2} height="75" width="75"/>
                   </div>
                   <Title
                     level={2}
