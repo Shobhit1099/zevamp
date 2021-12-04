@@ -36,7 +36,7 @@ function Home() {
   const [items, setItems] = useState();
 
   useEffect(() => {
-    fetch("https://zevamp.herokuapp.com/home/")
+    fetch("https://zevamp.herokuapp.com/")
       .then((res) => res.json())
       .then((data) => setItems(data));
   });
@@ -316,7 +316,7 @@ function Home() {
         >
           <Row gutter={[48, 24]} justify="center">
             {console.log(items)}
-            {items.testimonials.map((item) => {
+            {items && items.testimonials.map((item) => {
               return (
                 <Col lg={8}>
                   <Testimonial

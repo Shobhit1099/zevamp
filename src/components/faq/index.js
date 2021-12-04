@@ -16,7 +16,7 @@ function Faq() {
   const [items, setItems] = useState();
 
   useEffect(() => {
-    fetch("https://zevamp.herokuapp.com/home/")
+    fetch("https://zevamp.herokuapp.com/")
       .then((res) => res.json())
       .then((data) => setItems(data));
   });
@@ -60,7 +60,7 @@ function Faq() {
             )}
             className="site-collapse-custom-collapse"
           >
-            {items.faqs.map((item, index) => {
+            {items && items.faqs.map((item, index) => {
                 return (
                   <Panel
                     header={<b>{item.question}</b>}

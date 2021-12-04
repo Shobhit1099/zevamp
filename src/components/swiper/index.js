@@ -20,7 +20,7 @@ export default function SwiperCard() {
   const [items, setItems] = useState()
   
   useEffect(() => {
-    fetch("https://zevamp.herokuapp.com/home/")
+    fetch("https://zevamp.herokuapp.com/")
       .then((res) => res.json())
       .then((data) => setItems(data));
   });
@@ -37,7 +37,7 @@ export default function SwiperCard() {
         spaceBetween={isTooMuchSmall ? (isSmallest ? 20 : 30) : 40}
         className="mySwiper"
       >
-        {items.testimonials.map((item) => {
+        {items && items.testimonials.map((item) => {
           return (
             <Col>
               <SwiperSlide>
