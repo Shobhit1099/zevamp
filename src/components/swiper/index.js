@@ -17,10 +17,10 @@ export default function SwiperCard() {
   const isTooSmall = useMediaQuery({ query: "(max-width: 576px)" });
   const isTooMuchSmall = useMediaQuery({ query: "(max-width: 476px)" });
   const isSmallest = useMediaQuery({ query: "(max-width: 400px)" });
-  const [items, setItems] = useState()
-  
+  const [items, setItems] = useState();
+
   useEffect(() => {
-    fetch("https://zevamp.herokuapp.com/home/")
+    fetch("https://zevamp.herokuapp.com/home/", { mode: "cors" })
       .then((res) => res.json())
       .then((data) => setItems(data));
   });
@@ -37,7 +37,7 @@ export default function SwiperCard() {
         spaceBetween={isTooMuchSmall ? (isSmallest ? 20 : 30) : 40}
         className="mySwiper"
       >
-        {items && items.testimonials.map((item) => {
+        {items.testimonials.map((item) => {
           return (
             <Col>
               <SwiperSlide>
