@@ -16,7 +16,7 @@ function Faq() {
   const [items, setItems] = useState();
 
   useEffect(() => {
-    fetch("/home")
+    fetch("https://zevamp.herokuapp.com/home")
       .then((res) => res.json())
       .then((data) => setItems(data));
   });
