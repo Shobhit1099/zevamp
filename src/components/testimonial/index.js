@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Card, Avatar } from "antd";
+import { Row, Col, Card, Avatar, Rate } from "antd";
 import { AiFillStar } from "react-icons/ai";
 import { useMediaQuery } from "react-responsive";
 
@@ -26,13 +26,9 @@ export default function Testimonial(props) {
             <Col span={18}>
               <div style={{ fontSize: "18px", fontWeight: 500 }}>{props.name}</div>
               <div style={{display: "flex", alignItems: "center"}}> 
-                <AiFillStar size={16} style={{ marginTop: "2px", color: "#FEC969" }} />
-                <AiFillStar size={16} style={{ marginTop: "2px", color: "#FEC969" }} />
-                <AiFillStar size={16} style={{ marginTop: "2px", color: "#FEC969" }} />
-                <AiFillStar size={16} style={{ marginTop: "2px", color: "#FEC969" }} />
-                <AiFillStar size={16} style={{ marginTop: "2px", color: "#FEC969" }} />
+                <Rate defaultValue={props.rate} disabled style={{fontSize: "15px", color: "#FEC969" }} />
                 <span style={{ marginLeft: "5px", fontSize: "16px" }}>
-                  <b>5.0</b>
+                  <b>{props.rate}.0</b>
                 </span>
               </div>
             </Col>

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Logo1 from "../assets/svg/brand-icon.svg";
 import Logo2 from "../assets/svg/brand-icon-small.svg";
 import { Row, Col, Typography, Card, Button, Avatar, Rate } from "antd";
@@ -14,9 +15,6 @@ import Playstore from "../assets/images/playstore.png";
 import { BsInstagram } from "react-icons/bs";
 import Testimonial from "../components/testimonial";
 import Roller from "../components/roller";
-import user1 from "../assets/images/users/user1.jpg";
-import user2 from "../assets/images/users/user2.jpeg";
-import user3 from "../assets/images/users/user3.jpeg";
 import float1 from "../assets/images/users/float1.jpg";
 import float2 from "../assets/images/users/float2.jpg";
 import float3 from "../assets/images/users/float3.jpg";
@@ -35,6 +33,14 @@ function Home() {
   const isBelow530 = useMediaQuery({ query: "(max-width: 530px)" });
   const isBelow450 = useMediaQuery({ query: "(max-width: 450px)" });
   const isBelow1050 = useMediaQuery({ query: "(max-width: 1050px)" });
+  const [items, setItems] = useState();
+
+  useEffect(() => {
+    fetch("/home")
+      .then((res) => res.json())
+      .then((data) => setItems(data));
+  });
+
   return (
     <div>
       <Row
@@ -54,7 +60,6 @@ function Home() {
           <a href="#">
             <img src={Logo1} />
           </a>
-          <div style={{ color: "#979797", fontWeight: 500, fontSize: "16px" }}>Beta Version</div>
         </Col>
 
         <Col
@@ -154,7 +159,13 @@ function Home() {
             />
           </div>
 
-          <img className="img-fluid" src={meet} alt="google meet" height="467" width="467" />
+          <img
+            className="img-fluid"
+            src={meet}
+            alt="google meet"
+            height="467"
+            width="467"
+          />
 
           <div>
             <Avatar
@@ -304,27 +315,19 @@ function Home() {
           style={isSmall ? { display: "none" } : { maxWidth: "1000px" }}
         >
           <Row gutter={[48, 24]} justify="center">
-            <Col lg={8}>
-              <Testimonial
-                image={user1}
-                name="Sachin Kaul"
-                data="Would love to appreciate the idea that addresses some legit student/work life problems in self development and growth. "
-              />
-            </Col>
-            <Col lg={8}>
-              <Testimonial
-                image={user2}
-                name="Shivansh"
-                data="When the pandemic is limiting socialization, a platform like this can help students and professionals to connect with each other and develop themselves without any restrictions. "
-              />
-            </Col>
-            <Col lg={8}>
-              <Testimonial
-                image={user3}
-                name="Shreya"
-                data="Amazing hour. A great utilization of the online platform."
-              />
-            </Col>
+            {console.log(items)}
+            {items && items.testimonials.map((item) => {
+              return (
+                <Col lg={8}>
+                  <Testimonial
+                    image={item.img}
+                    name={item.uname}
+                    data={item.review}
+                    rate={item.rate}
+                  />
+                </Col>
+              );
+            })}
           </Row>
         </Col>
       </Row>
@@ -561,7 +564,7 @@ function Home() {
                       margin: "10px 0px",
                     }}
                   >
-                    <img src={Logo2} height="75" width="75"/>
+                    <img src={Logo2} height="75" width="75" />
                   </div>
                   <Title
                     level={2}

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Card, Row, Col, Collapse } from "antd";
 import { RightOutlined } from "@ant-design/icons";
 import img1 from "../../assets/images/Group_32.png";
@@ -12,6 +13,14 @@ const { Panel } = Collapse;
 function Faq() {
   const isBelow900 = useMediaQuery({ query: "(max-width: 900px)" });
   const isBelow768 = useMediaQuery({ query: "(max-width: 768px)" });
+  const [items, setItems] = useState();
+
+  useEffect(() => {
+    fetch("/home")
+      .then((res) => res.json())
+      .then((data) => setItems(data));
+  });
+
   return (
     <Card
       hoverable
@@ -28,7 +37,7 @@ function Faq() {
             <img
               src={img2}
               className="img-fluid"
-              style={{ maxHeight: "160px"}}
+              style={{ maxHeight: "160px" }}
             />
           ) : (
             <img src={img1} height="330" />
@@ -41,7 +50,7 @@ function Faq() {
             defaultActiveKey={1}
             accordion
             bordered={false}
-            defaultActiveKey={["1"]}
+            defaultActiveKey={["0"]}
             expandIconPosition="right"
             expandIcon={({ isActive }) => (
               <RightOutlined
@@ -51,55 +60,17 @@ function Faq() {
             )}
             className="site-collapse-custom-collapse"
           >
-            <Panel
-              header={<b>What is Zevamp?</b>}
-              key="1"
-              className="site-collapse-custom-panel"
-            >
-              <p>
-                Zevamp brings to you an entirely innovative experience by
-                pairing you with a completely different personality as that of
-                yours. We carry you to the most fantastic video talk with them,
-                delivering an experience that can indeed advise your better
-                future.
-              </p>
-            </Panel>
-            <Panel
-              header={
-                <b>
-                  Is it necessary to keep my camera switched on throughout the
-                  session?
-                </b>
-              }
-              key="2"
-              className="site-collapse-custom-panel"
-            >
-              <p>No, it is not necessary. But we would prefer you to keep it on for better interaction.</p>
-            </Panel>
-            <Panel
-              header={
-                <b>Can I schedule my meeting as per my choice of time?</b>
-              }
-              key="3"
-              className="site-collapse-custom-panel"
-            >
-              <p>Yes. We at Zevamp care about our users and are happy to assist you.</p>
-            </Panel>
-            <Panel
-              header={
-                <b>
-                  What happens if any of us loses network connection midway?
-                </b>
-              }
-              key="4"
-              className="site-collapse-custom-panel"
-            >
-              <p>
-                Without any hurry, you can rejoin the meet once your
-                connectivity is regained. Else our team will connect to you
-                through a normal voice call and continue the rest of the meet.
-              </p>
-            </Panel>
+            {items && items.faqs.map((item, index) => {
+                return (
+                  <Panel
+                    header={<b>{item.question}</b>}
+                    key={index}
+                    className="site-collapse-custom-panel"
+                  >
+                    <p>{item.answer}</p>
+                  </Panel>
+                );
+              })}
           </Collapse>
         </Col>
       </Row>
