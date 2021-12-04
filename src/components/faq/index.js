@@ -16,7 +16,7 @@ function Faq() {
   const [items, setItems] = useState();
 
   useEffect(() => {
-    fetch("https://zevamp.herokuapp.com/home/", { mode: "cors" })
+    fetch("https://zevamp.herokuapp.com/home/")
       .then((res) => res.json())
       .then((data) => setItems(data));
   });
@@ -61,16 +61,16 @@ function Faq() {
             className="site-collapse-custom-collapse"
           >
             {items.faqs.map((item, index) => {
-              return (
-                <Panel
-                  header={<b>{item.question}</b>}
-                  key={index}
-                  className="site-collapse-custom-panel"
-                >
-                  <p>{item.answer}</p>
-                </Panel>
-              );
-            })}
+                return (
+                  <Panel
+                    header={<b>{item.question}</b>}
+                    key={index}
+                    className="site-collapse-custom-panel"
+                  >
+                    <p>{item.answer}</p>
+                  </Panel>
+                );
+              })}
           </Collapse>
         </Col>
       </Row>

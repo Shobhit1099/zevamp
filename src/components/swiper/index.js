@@ -17,10 +17,10 @@ export default function SwiperCard() {
   const isTooSmall = useMediaQuery({ query: "(max-width: 576px)" });
   const isTooMuchSmall = useMediaQuery({ query: "(max-width: 476px)" });
   const isSmallest = useMediaQuery({ query: "(max-width: 400px)" });
-  const [items, setItems] = useState();
-
+  const [items, setItems] = useState()
+  
   useEffect(() => {
-    fetch("https://zevamp.herokuapp.com/home/", { mode: "cors" })
+    fetch("https://zevamp.herokuapp.com/home/")
       .then((res) => res.json())
       .then((data) => setItems(data));
   });

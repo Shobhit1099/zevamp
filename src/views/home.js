@@ -36,7 +36,7 @@ function Home() {
   const [items, setItems] = useState();
 
   useEffect(() => {
-    fetch("https://zevamp.herokuapp.com/home/", { mode: "cors" })
+    fetch("https://zevamp.herokuapp.com/home/")
       .then((res) => res.json())
       .then((data) => setItems(data));
   });
