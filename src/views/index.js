@@ -7,6 +7,7 @@ export const Views = () => {
     <Suspense fallback={<Home/>}>
       <Switch>
         <Route path={`/home`} component={lazy(() => import("./home"))} />
+        <Route path={`/audio-box`} component={lazy(() => import("./audioBox"))} />
         <Route exact path={`/`} component={lazy(() => import("./home"))} />
         <Redirect from={`/`} to={`/`} />
       </Switch>

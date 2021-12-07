@@ -19,7 +19,7 @@ function Faq() {
     fetch("https://zevamp.herokuapp.com/")
       .then((res) => res.json())
       .then((data) => setItems(data));
-  });
+  }, []);
 
   return (
     <Card
