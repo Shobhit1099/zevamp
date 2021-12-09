@@ -31,8 +31,6 @@ function Home() {
   const isBelow1050 = useMediaQuery({ query: "(max-width: 1050px)" });
   const [items, setItems] = useState();
 
-  window.scrollTo(0,0);
-
   useEffect(() => {
     fetch("https://zevamp.herokuapp.com/")
       .then((res) => res.json())
@@ -376,10 +374,10 @@ function Home() {
                 }
               >
                 <div style={{ fontSize: "14px", color: "#979797" }}>
-                  Are you looking for
+                  Are you
                 </div>
                 <div style={{ fontSize: "24px", fontWeight: 500 }}>
-                  Still not sure?
+                  still not sure?
                 </div>
               </Col>
 
