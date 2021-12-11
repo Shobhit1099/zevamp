@@ -2,7 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo1 from "../../assets/svg/brand-icon.svg";
 import Footer from "../../components/footer";
-import { Row, Col, Typography, Card, Button, Avatar, Rate, Skeleton } from "antd";
+import {
+  Row,
+  Col,
+  Typography,
+  Card,
+  Button,
+  Avatar,
+  Rate,
+  Skeleton,
+} from "antd";
 import meet from "../../assets/images/meet.png";
 import { TypeformMobile, TypeformDesktop } from "../../components/typeform";
 import Faq from "../../components/faq";
@@ -75,24 +84,19 @@ function Home() {
             size={45}
             src={float1}
           />
-          {isBelow530 ? (
-            <Title
-              level={1}
-              style={{ fontWeight: 700, margin: "0px" }}
-              className="text-center"
-            >
-              Connect, Express &#38; Grow
-            </Title>
-          ) : (
-            <Title
-              level={1}
-              style={{ fontWeight: 700, margin: "0px" }}
-              className="text-center"
-            >
-              Connect, Express &#38;
-              <br /> Grow
-            </Title>
-          )}
+          <Title
+            level={1}
+            style={{ fontWeight: 700, margin: "0px" }}
+            className="text-center"
+          >
+            Connect, Express &#38; Grow
+          </Title>
+          <div
+            className="text-muted font-size-md"
+            style={{ fontWeight: 500, marginLeft: "20px" }}
+          >
+            Brought about 25+ successful meetings in the last month 🚀🔥
+          </div>
           <Avatar
             className="floating"
             style={
@@ -381,10 +385,7 @@ function Home() {
                 </div>
               </Col>
 
-              <Col
-                sm={8}
-                xs={24}
-              >
+              <Col sm={8} xs={24}>
                 <Link to={"/audio-box"}>
                   <Button
                     block

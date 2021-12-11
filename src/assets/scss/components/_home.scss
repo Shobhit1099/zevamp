@@ -9,11 +9,6 @@
   border-color: #ff9753;
 }
 
-.basic-button::selection {
-  background-color: #ff5c00;
-  border-color: #ff5c00;
-}
-
 a {
   color: black;
 }
@@ -31,7 +26,7 @@ a:hover {
 }
 
 .my-form {
-  border: 1px solid #BFBFBF;
+  border: 1px solid #bfbfbf;
   border-radius: 7px;
 }
 
@@ -53,6 +48,6 @@ a:hover {
     transform: translate(0, -0px);
   }
 }
-*{
+* {
   scroll-behavior: smooth !important;
-  }
+}
