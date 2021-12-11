@@ -91,12 +91,23 @@ function Home() {
           >
             Connect, Express &#38; Grow
           </Title>
-          <div
-            className="text-muted font-size-md"
-            style={{ fontWeight: 500, marginLeft: "20px" }}
-          >
-            Brought about 25+ successful meetings in the last month 🚀🔥
-          </div>
+          {!isTooSmall ? (
+            <div
+              className="text-muted text-center font-size-md"
+              style={{ fontWeight: 500, marginLeft: "20px" }}
+            >
+              Brought about 25+ successful meetings in the last month🚀🔥
+            </div>
+          ) : (
+            <div
+              className="text-muted text-center font-size-md"
+              style={{ fontWeight: 500 }}
+            >
+              Brought about 25+ successful meetings
+              <br />
+              in the last month🚀🔥
+            </div>
+          )}
           <Avatar
             className="floating"
             style={
