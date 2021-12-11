@@ -271,7 +271,7 @@ function AudioBox() {
                 borderRadius: "7px",
                 fontWeight: 600,
               }}
-              href="https://www.youtube.com/channel/UCEdkricH6GpG6GJs98mJccQ"
+              href="https://www.youtube.com/channel/UCEdkricH6GpG6GJs98mJccQ/about"
             >
               Explore audio-box Now
             </Button>
