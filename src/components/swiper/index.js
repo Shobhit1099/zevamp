@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Row, Col } from "antd";
+import { Row, Col, Skeleton } from "antd";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import SwiperCore, { Navigation } from "swiper";
@@ -17,8 +17,8 @@ export default function SwiperCard() {
   const isTooSmall = useMediaQuery({ query: "(max-width: 576px)" });
   const isTooMuchSmall = useMediaQuery({ query: "(max-width: 476px)" });
   const isSmallest = useMediaQuery({ query: "(max-width: 400px)" });
-  const [items, setItems] = useState()
-  
+  const [items, setItems] = useState();
+
   useEffect(() => {
     fetch("https://zevamp.herokuapp.com/")
       .then((res) => res.json())
@@ -37,20 +37,40 @@ export default function SwiperCard() {
         spaceBetween={isTooMuchSmall ? (isSmallest ? 20 : 30) : 40}
         className="mySwiper"
       >
-        {items && items.testimonials.map((item) => {
-          return (
+        {items ? (
+          items.testimonials.map((item) => {
+            return (
+              <Col>
+                <SwiperSlide>
+                  <Testimonial
+                    image={item.img}
+                    name={item.uname}
+                    data={item.review}
+                    rate={item.rate}
+                  />
+                </SwiperSlide>
+              </Col>
+            );
+          })
+        ) : (
+          <>
             <Col>
               <SwiperSlide>
-                <Testimonial
-                  image={item.img}
-                  name={item.uname}
-                  data={item.review}
-                  rate={item.rate}
-                />
+                <Testimonial loading={true} />
               </SwiperSlide>
             </Col>
-          );
-        })}
+            <Col>
+              <SwiperSlide>
+                <Testimonial loading={true} />
+              </SwiperSlide>
+            </Col>
+            <Col>
+              <SwiperSlide>
+                <Testimonial loading={true} />
+              </SwiperSlide>
+            </Col>
+          </>
+        )}
       </Swiper>
     </Row>
   );
