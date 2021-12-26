@@ -18,7 +18,9 @@ export default function Testimonial(props) {
         margin: "0 auto",
       }}
     >
-      {/* <Skeleton active avatar paragraph={{ rows: 4 }}> */}
+      {props.loading ? (
+        <Skeleton active avatar paragraph={{ rows: 4 }}></Skeleton>
+      ) : (
         <Row gutter={[0, 12]} style={{ padding: "2px" }}>
           <Col span={24}>
             <Row justify="space-between">
@@ -49,7 +51,7 @@ export default function Testimonial(props) {
             {props.data}
           </Col>
         </Row>
-      {/* </Skeleton> */}
+      )}
     </Card>
   );
 }

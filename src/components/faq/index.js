@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Card, Row, Col, Collapse } from "antd";
+import { Card, Row, Col, Collapse, Skeleton } from "antd";
 import { RightOutlined } from "@ant-design/icons";
 import img1 from "../../assets/images/Group_32.png";
 import img2 from "../../assets/images/Group_5.png";
@@ -60,7 +60,8 @@ function Faq() {
             )}
             className="site-collapse-custom-collapse"
           >
-            {items && items.faqs.map((item, index) => {
+            {items ? (
+              items.faqs.map((item, index) => {
                 return (
                   <Panel
                     header={<b>{item.question}</b>}
@@ -70,7 +71,23 @@ function Faq() {
                     <p>{item.answer}</p>
                   </Panel>
                 );
-              })}
+              })
+            ) : (
+              <>
+                <div style={{ backgroundColor: "white", borderRadius: "5px", marginBottom: "10px", padding: "10px" }}>
+                  <Skeleton active paragraph={{ rows: 1 }}></Skeleton>
+                </div>
+                <div style={{ backgroundColor: "white", borderRadius: "5px", marginBottom: "10px", padding: "10px" }}>
+                  <Skeleton active paragraph={{ rows: 0 }}></Skeleton>
+                </div>
+                <div style={{ backgroundColor: "white", borderRadius: "5px", marginBottom: "10px", padding: "10px" }}>
+                  <Skeleton active paragraph={{ rows: 0 }}></Skeleton>
+                </div>
+                <div style={{ backgroundColor: "white", borderRadius: "5px", marginBottom: "10px", padding: "10px" }}>
+                  <Skeleton active paragraph={{ rows: 0 }}></Skeleton>
+                </div>
+              </>
+            )}
           </Collapse>
         </Col>
       </Row>

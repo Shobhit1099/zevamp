@@ -39,6 +39,7 @@ function Home() {
   const isBelow450 = useMediaQuery({ query: "(max-width: 450px)" });
   const isBelow1050 = useMediaQuery({ query: "(max-width: 1050px)" });
   const [items, setItems] = useState();
+  const [loading, setloading] = useState(false);
 
   useEffect(() => {
     fetch("https://zevamp.herokuapp.com/")
@@ -48,7 +49,7 @@ function Home() {
 
   return (
     <div>
-      <Row gutter={[0, 48]} justify="center" style={{ padding: "30px 40px" }}>
+      <Row gutter={[0, 40]} justify="center" style={{ padding: "30px 40px" }}>
         <Col
           span={24}
           style={{
@@ -322,7 +323,7 @@ function Home() {
         >
           <Row gutter={[48, 24]} justify="center">
             {console.log(items)}
-            {items &&
+            {items ? (
               items.testimonials.map((item) => {
                 return (
                   <Col lg={8}>
@@ -334,7 +335,20 @@ function Home() {
                     />
                   </Col>
                 );
-              })}
+              })
+            ) : (
+              <>
+                <Col lg={8}>
+                  <Testimonial loading={true} />
+                </Col>
+                <Col lg={8}>
+                  <Testimonial loading={true} />
+                </Col>
+                <Col lg={8}>
+                  <Testimonial loading={true} />
+                </Col>
+              </>
+            )}
           </Row>
         </Col>
       </Row>
@@ -353,7 +367,7 @@ function Home() {
 
       <div id="form"></div>
 
-      <Row gutter={[0, 48]}>
+      <Row gutter={[0, 40]} style={{ marginTop: "12px" }}>
         <Col
           span={24}
           style={
@@ -454,6 +468,7 @@ function Home() {
             display: "flex",
             justifyContent: "center",
             padding: "0px 40px",
+            marginTop: "-10px",
           }}
         >
           <Faq />
