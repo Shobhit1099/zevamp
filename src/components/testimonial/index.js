@@ -49,27 +49,6 @@ export default function Testimonial(props) {
             {props.data}
           </Col>
         </Row>
-        {/* <Meta
-        avatar={<Avatar size={40} src={props.image} />}
-        title={
-          <Row>
-            <Col span={24}>
-              <div style={{ fontSize: "18px" }}>{props.name}</div>
-            </Col>
-            <Col span={24} style={{ display: "flex", alignItems: "center" }}>
-              <AiFillStar style={{ marginTop: "2px", color: "#FEC969" }} />
-              <AiFillStar style={{ marginTop: "2px", color: "#FEC969" }} />
-              <AiFillStar style={{ marginTop: "2px", color: "#FEC969" }} />
-              <AiFillStar style={{ marginTop: "2px", color: "#FEC969" }} />
-              <AiFillStar style={{ marginTop: "2px", color: "#FEC969" }} />
-              <span style={{ marginLeft: "5px" }}>
-                <b>5.0</b>
-              </span>
-            </Col>
-          </Row>
-        }
-        description={<div style={{ color: "black" }}>{props.data}</div>}
-      /> */}
       {/* </Skeleton> */}
     </Card>
   );
