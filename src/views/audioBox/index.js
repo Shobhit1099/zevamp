@@ -15,7 +15,7 @@ import Footer from "../../components/footer";
 
 function AudioBox() {
   const isSmall = useMediaQuery({ query: "(max-width: 768px)" });
-  window.scrollTo(0,0);
+  window.scrollTo(0, 0);
   return (
     <div>
       {!isSmall ? (
@@ -459,7 +459,7 @@ function AudioBox() {
                 borderRadius: "7px",
                 fontWeight: 600,
               }}
-              href="https://youtube.com"
+              href="https://www.youtube.com/channel/UCEdkricH6GpG6GJs98mJccQ/about"
             >
               Explore audio-box Now
             </Button>
