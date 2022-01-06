@@ -28,7 +28,7 @@ function AudioBox() {
               alignItems: "center",
             }}
           >
-            <Link to={"/home"}>
+            <Link to={"/"}>
               <img src={Logo1} />
             </Link>
             <div

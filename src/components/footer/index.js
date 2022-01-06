@@ -67,6 +67,7 @@ function Footer() {
             <Row gutter={[24, 0]} style={{ marginBottom: "10px" }}>
               <Col>
                 <a
+                  className="social-link"
                   href="https://twitter.com/zevampofficial"
                   target="_blank"
                   style={{
@@ -84,6 +85,7 @@ function Footer() {
               </Col>
               <Col>
                 <a
+                  className="social-link"
                   href="https://www.linkedin.com/company/zevamp/"
                   style={{
                     display: "flex",
@@ -100,6 +102,7 @@ function Footer() {
               </Col>
               <Col>
                 <a
+                  className="social-link"
                   href="https://www.instagram.com/zevampofficial/"
                   style={{
                     display: "flex",
