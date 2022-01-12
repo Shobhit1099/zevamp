@@ -1,18 +1,19 @@
-import React, { lazy, Suspense } from "react";
-import { Switch, Route, Redirect, Link } from "react-router-dom";
-import Landing from "./landing";
+import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+import AppLayout from "../layout/app-layout";
+import LandingLayout from "../layout/landing-layout";
 
-export const Views = () => {
+export const Views = (props) => {
   return (
-    <Suspense fallback={<Landing/>}>
-      <Switch>
-        <Route path={`/home`} component={lazy(() => import("./home"))} />
-        <Route path={`/audio-box`} component={lazy(() => import("./audioBox"))} />
-        <Route exact path={`/`} component={lazy(() => import("./landing"))} />
-        <Redirect from={`/`} to={`/`} />
-      </Switch>
-    </Suspense>
+    <Switch>
+      <Route path="/app">
+        <AppLayout />
+      </Route>
+      <Route path={"/"}>
+        <LandingLayout />
+      </Route>
+    </Switch>
   );
 };
 
-export default React.memo(Views);
+export default Views;

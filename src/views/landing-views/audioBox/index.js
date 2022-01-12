@@ -1,17 +1,19 @@
 import React from "react";
-import Logo1 from "../../assets/svg/brand-icon.svg";
+import Logo1 from "../../../assets/svg/brand-icon.svg";
 import { Link } from "react-router-dom";
-import { Row, Col, Button } from "antd";
-import Arrow1 from "../../assets/svg/Arrow1.svg";
-import Arrow2 from "../../assets/svg/Arrow2.svg";
-import Vector1 from "../../assets/svg/Vector1.svg";
-import Vector2 from "../../assets/svg/Vector2.svg";
-import Audio1 from "../../assets/images/audio1.png";
-import Audio2 from "../../assets/images/audio2.png";
-import Audio3 from "../../assets/images/meet.png";
+import { Row, Col, Button, Layout } from "antd";
+import Arrow1 from "../../../assets/svg/Arrow1.svg";
+import Arrow2 from "../../../assets/svg/Arrow2.svg";
+import Vector1 from "../../../assets/svg/Vector1.svg";
+import Vector2 from "../../../assets/svg/Vector2.svg";
+import Audio1 from "../../../assets/images/audio1.png";
+import Audio2 from "../../../assets/images/audio2.png";
+import Audio3 from "../../../assets/images/meet.png";
 import { BsYoutube } from "react-icons/bs";
 import { useMediaQuery } from "react-responsive";
-import Footer from "../../components/footer";
+import Footer from "../../../components/footer";
+
+const { Content } = Layout;
 
 function AudioBox() {
   const isSmall = useMediaQuery({ query: "(max-width: 768px)" });
@@ -52,7 +54,13 @@ function AudioBox() {
                   alignItems: "center",
                 }}
               >
-                <img src={Audio1} alt="Arrow" className="img-fluid" height={340} width={220} />
+                <img
+                  src={Audio1}
+                  alt="Arrow"
+                  className="img-fluid"
+                  height={340}
+                  width={220}
+                />
               </Col>
               <Col
                 span={3}
@@ -73,7 +81,13 @@ function AudioBox() {
                   alignItems: "center",
                 }}
               >
-                <img src={Audio2} alt="Arrow" className="img-fluid" height={130} width={260} />
+                <img
+                  src={Audio2}
+                  alt="Arrow"
+                  className="img-fluid"
+                  height={130}
+                  width={260}
+                />
               </Col>
               <Col
                 span={3}
@@ -94,7 +108,13 @@ function AudioBox() {
                   alignItems: "center",
                 }}
               >
-                <img src={Audio3} alt="Arrow" className="img-fluid" height={175} width={350} />
+                <img
+                  src={Audio3}
+                  alt="Arrow"
+                  className="img-fluid"
+                  height={175}
+                  width={350}
+                />
               </Col>
             </Row>
             <Row style={{ marginTop: "20px" }}>

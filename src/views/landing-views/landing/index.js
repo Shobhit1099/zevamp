@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Logo1 from "../../assets/svg/brand-icon.svg";
-import Footer from "../../components/footer";
+import Logo1 from "../../../assets/svg/brand-icon.svg";
+import Footer from "../../../components/footer";
 import {
   Row,
   Col,
@@ -12,22 +12,22 @@ import {
   Rate,
   Skeleton,
 } from "antd";
-import meet from "../../assets/images/meet.png";
-import { TypeformMobile, TypeformDesktop } from "../../components/typeform";
-import Faq from "../../components/faq";
+import meet from "../../../assets/images/meet.png";
+import { TypeformMobile, TypeformDesktop } from "../../../components/typeform";
+import Faq from "../../../components/faq";
 import { useMediaQuery } from "react-responsive";
-import SwiperCard from "../../components/swiper";
+import SwiperCard from "../../../components/swiper";
 import "react-multi-carousel/lib/styles.css";
-import Testimonial from "../../components/testimonial";
-import Roller from "../../components/roller";
-import float1 from "../../assets/images/users/float1.jpg";
-import float2 from "../../assets/images/users/float2.jpg";
-import float3 from "../../assets/images/users/float3.jpg";
-import float4 from "../../assets/images/users/float4.jpg";
-import float5 from "../../assets/images/users/float5.jpg";
-import float6 from "../../assets/images/users/float6.jpg";
-import float7 from "../../assets/images/users/float7.jpg";
-import float8 from "../../assets/images/users/float8.jpg";
+import Testimonial from "../../../components/testimonial";
+import Roller from "../../../components/roller";
+import float1 from "../../../assets/images/users/float1.jpg";
+import float2 from "../../../assets/images/users/float2.jpg";
+import float3 from "../../../assets/images/users/float3.jpg";
+import float4 from "../../../assets/images/users/float4.jpg";
+import float5 from "../../../assets/images/users/float5.jpg";
+import float6 from "../../../assets/images/users/float6.jpg";
+import float7 from "../../../assets/images/users/float7.jpg";
+import float8 from "../../../assets/images/users/float8.jpg";
 
 const { Title } = Typography;
 
@@ -411,7 +411,7 @@ function Landing() {
               </Col>
 
               <Col sm={8} xs={24}>
-                <Link to={"/audio-box"}>
+                <Link to={"/audio-box-demo"}>
                   <Button
                     block
                     className="basic-button"

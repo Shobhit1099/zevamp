@@ -6,8 +6,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact component={Views}>
-          </Route>
+          <Route exact component={Views}></Route>
         </Switch>
       </Router>
     </div>

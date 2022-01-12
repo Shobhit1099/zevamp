@@ -238,7 +238,7 @@ function Footer() {
                 team@zevamp.com
                 <br />
                 <div className="text-muted font-size-md">
-                  &copy; 2021 Zevamp
+                  &copy; 2022 Zevamp
                 </div>
               </Col>
             </Row>
