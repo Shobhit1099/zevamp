@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo1 from "../../../assets/svg/brand-icon.svg";
+import { AiFillMail, AiFillLock } from "react-icons/ai";
 import Footer from "../../../components/footer";
 import {
   Row,
@@ -11,6 +12,8 @@ import {
   Avatar,
   Rate,
   Skeleton,
+  Modal,
+  Input,
 } from "antd";
 import meet from "../../../assets/images/meet.png";
 import { TypeformMobile, TypeformDesktop } from "../../../components/typeform";
@@ -28,6 +31,10 @@ import float5 from "../../../assets/images/users/float5.jpg";
 import float6 from "../../../assets/images/users/float6.jpg";
 import float7 from "../../../assets/images/users/float7.jpg";
 import float8 from "../../../assets/images/users/float8.jpg";
+import loginDummy1 from "../../../assets/images/loginDummy1.png";
+import loginDummy2 from "../../../assets/images/loginDummy2.png";
+import loginDummy3 from "../../../assets/images/loginDummy3.png";
+import loginDummy4 from "../../../assets/images/loginDummy4.png";
 
 const { Title } = Typography;
 
@@ -40,6 +47,18 @@ function Landing() {
   const isBelow1050 = useMediaQuery({ query: "(max-width: 1050px)" });
   const [items, setItems] = useState();
   const [loading, setloading] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
 
   useEffect(() => {
     fetch("https://zevamp.herokuapp.com/")
@@ -227,7 +246,8 @@ function Landing() {
           span={24}
           style={{
             display: "flex",
-            justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
           <Avatar
@@ -276,7 +296,6 @@ function Landing() {
                 {!isBelow1050 ? (
                   <Button
                     block
-                    className="basic-button"
                     size="large"
                     type="primary"
                     style={{
@@ -290,14 +309,143 @@ function Landing() {
                     }}
                     href="#form"
                   >
-                    Attend Now
+                    SignUp Now
                   </Button>
                 ) : (
-                  <TypeformMobile message="Attend Now" />
+                  <TypeformMobile message="SignUp Now" />
                 )}
               </Col>
             </Row>
           </Card>
+          <div
+            style={{ color: "#7D8186", marginTop: "10px", fontSize: "16px" }}
+          >
+            Click here to{" "}
+            <a className="login-anchor" onClick={showModal}>
+              login
+            </a>
+            <Modal
+              visible={isModalVisible}
+              onOk={handleOk}
+              centered
+              onCancel={handleCancel}
+              width={1200}
+            >
+              <Row gutter={[24, 24]}>
+                <Col
+                  lg={14}
+                  xs={24}
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <div style={{ marginRight: "20px" }}>
+                    <img
+                      className="img-fluid"
+                      src={loginDummy1}
+                      height={100}
+                      width={100}
+                    ></img>
+                  </div>
+                  <div style={{ marginRight: "20px" }}>
+                    <img
+                      className="img-fluid"
+                      src={loginDummy2}
+                      height={100}
+                      width={100}
+                    ></img>
+                  </div>
+                  <div style={{ marginRight: "20px" }}>
+                    <img
+                      className="img-fluid"
+                      src={loginDummy3}
+                      height={100}
+                      width={100}
+                    ></img>
+                  </div>
+                  <div style={{ marginRight: "20px" }}>
+                    <img
+                      className="img-fluid"
+                      src={loginDummy4}
+                      height={100}
+                      width={100}
+                    ></img>
+                  </div>
+                </Col>
+                <Col
+                  style={isNotLarge && {
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                  lg={10}
+                  xs={24}
+                >
+                  <div style={{ fontSize: "20px", color: "#98989E" }}>Hey!</div>
+                  <div style={{ fontSize: "24px", fontWeight: 700 }}>
+                    Welcome back
+                  </div>
+                  <form style={{ marginTop: "20px" }}>
+                    <div style={{ marginBottom: "20px" }}>
+                      <div style={{ fontWeight: 500, marginBottom: "5px" }}>
+                        E-Mail or Username
+                      </div>
+                      <Input
+                        size="large"
+                        placeholder="e.g.: elonmusk@mars.com "
+                        prefix={
+                          <AiFillMail
+                            size={20}
+                            style={{ marginTop: "3px" }}
+                            className="text-muted"
+                          />
+                        }
+                      />
+                    </div>
+                    <div style={{ marginBottom: "20px" }}>
+                      <div style={{ fontWeight: 500, marginBottom: "5px" }}>
+                        Password
+                      </div>
+                      <Input
+                        size="large"
+                        placeholder="e.g.: X Æ A-12"
+                        prefix={
+                          <AiFillLock
+                            size={20}
+                            style={{ marginTop: "1px" }}
+                            className="text-muted"
+                          />
+                        }
+                      />
+                    </div>
+                    <Button
+                      block
+                      onClick={handleOk}
+                      type="primary"
+                      size="large"
+                      style={{
+                        maxWidth: "400px",
+                        marginTop: "10px",
+                        marginBottom: "10px",
+                        borderRadius: "25px",
+                      }}
+                    >
+                      Login
+                    </Button>
+                    <div>
+                      New User?{" "}
+                      <a className="signup-anchor" style={{ fontWeight: 500 }}>
+                        Signup here &#8594;
+                      </a>
+                    </div>
+                  </form>
+                </Col>
+              </Row>
+            </Modal>
+          </div>
         </Col>
 
         <Col
@@ -414,7 +562,6 @@ function Landing() {
                 <Link to={"/audio-box-demo"}>
                   <Button
                     block
-                    className="basic-button"
                     size="large"
                     type="primary"
                     style={{

@@ -1,9 +1,11 @@
+.ant-btn-primary,
 .basic-button {
   background-color: #ff5c00;
   border-color: #ff5c00;
   border: 1px solid #ff5c00;
 }
 
+.ant-btn-primary:hover,
 .basic-button:hover {
   background-color: #ff9753;
   border-color: #ff9753;
@@ -50,4 +52,36 @@
 }
 * {
   scroll-behavior: smooth !important;
+}
+
+.login-anchor {
+  color: #ff5c00 !important;
+}
+
+.login-anchor:hover {
+  color: #ff9753 !important;
+}
+
+.signup-anchor {
+  color: black !important;
+}
+
+.signup-anchor:hover {
+  color: #555555 !important;
+}
+
+.ant-input-affix-wrapper {
+  border-radius: 25px;
+  width: 400px;
+  min-width: 200px;
+}
+
+.ant-modal-footer {
+  display: none !important;
+}
+
+@media (max-width: 450px) {
+  .ant-input-affix-wrapper {
+    width: 250px;
+  }
 }
