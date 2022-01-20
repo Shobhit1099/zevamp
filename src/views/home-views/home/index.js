@@ -499,7 +499,7 @@ function Home() {
         </Col>
       </Row>
 
-      <Row gutter={[0, 40]}>
+      <Row gutter={[0, 24]}>
         <Col
           span={24}
           style={{
@@ -534,7 +534,7 @@ function Home() {
             display: "flex",
             justifyContent: "center",
             padding: "0px 40px",
-            marginTop: "-10px"
+            marginBottom: "30px"
           }}
         >
           <Faq />
