@@ -1,0 +1,1513 @@
+.websiteBody {
+  margin: 0;
+  background-color: #011627;
+}
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+  .Page {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    pointer-events: auto;
+  }
+  .Page-outer {
+    pointer-events: none;
+    z-index: 1;
+  }
+  .Android-Large---1 {
+    position: relative;
+    z-index: 16;
+    pointer-events: none;
+    width: 100%;
+    margin-left: 0;
+    height: 1452px;
+    width: 1020px;
+    min-width: 200px;
+    max-width: 360px;
+    margin: auto;
+    background-color: rgba(1, 22, 39, 1);
+    overflow: hidden;
+  }
+  .Android-Large---1-outer {
+    pointer-events: none;
+    z-index: 16;
+  }
+  .Group-104 {
+    position: relative;
+    z-index: 17;
+    pointer-events: none;
+    margin-left: 40px;
+    width: 152.45px;
+    min-width: 152.45px;
+    height: 48px;
+    margin-top: 48px;
+    margin-bottom: 1356px;
+    min-height: 48px;
+    content: url(assets/images/Group_104.png);
+  }
+  .Group-104-outer {
+    pointer-events: none;
+    z-index: 17;
+    position: relative;
+    display: flex;
+  }
+  .A-LIVE-moderated-pla {
+    position: relative;
+    z-index: 18;
+    pointer-events: none;
+    margin-left: 40px;
+    width: 250.33px;
+    min-width: 250.33px;
+    margin-top: -1291px;
+    margin-bottom: 1232.97px;
+    min-height: 58.03px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 700;
+    font-size: 23.606557846069336px;
+    line-height: 32.79999923706055px;
+  }
+  .A-LIVE-moderated-pla-outer {
+    pointer-events: none;
+    z-index: 18;
+    position: relative;
+    display: flex;
+  }
+  .Beta-version--Exclus {
+    position: relative;
+    z-index: 22;
+    pointer-events: none;
+    opacity: 0.4;
+    margin-left: 40px;
+    width: 208px;
+    min-width: 210px;
+    margin-top: -1223px;
+    margin-bottom: 1165px;
+    min-height: 58px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 400;
+    font-size: 11.803278923034668px;
+    line-height: 16px;
+  }
+  .Beta-version--Exclus-outer {
+    pointer-events: none;
+    z-index: 22;
+    position: relative;
+    display: flex;
+  }
+  .Vectary-texture {
+    position: relative;
+    z-index: 24;
+    pointer-events: none;
+    margin-left: 0px;
+    width: 360px;
+    min-width: 360px;
+    height: 447px;
+    margin-top: -1189px;
+    margin-bottom: 742px;
+    min-height: 447px;
+    content: url(assets/images/Vectary_texture.png);
+  }
+  .Vectary-texture-outer {
+    pointer-events: none;
+    z-index: 24;
+    position: relative;
+    display: flex;
+  }
+  .image-7 {
+    position: relative;
+    z-index: 23;
+    pointer-events: none;
+    margin-left: 40px;
+    width: 84.72px;
+    min-width: 84.72px;
+    height: 18.69px;
+    margin-top: -1166px;
+    margin-bottom: 1147.31px;
+    min-height: 18.69px;
+    content: url(assets/images/image_7.png);
+  }
+  .image-7-outer {
+    pointer-events: none;
+    z-index: 23;
+    position: relative;
+    display: flex;
+  }
+  .q500--meet-environme {
+    position: relative;
+    z-index: 20;
+    pointer-events: none;
+    opacity: 0.2;
+    margin-left: 40px;
+    width: 251px;
+    min-width: 251px;
+    margin-top: -763px;
+    margin-bottom: 705px;
+    min-height: 58px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 700;
+    font-size: 35.40983581542969px;
+    line-height: 39.34426498413086px;
+  }
+  .q500--meet-environme-outer {
+    pointer-events: none;
+    z-index: 20;
+    position: relative;
+    display: flex;
+  }
+  .Experience-intriguin {
+    position: relative;
+    z-index: 19;
+    pointer-events: none;
+    margin-left: 40px;
+    width: 260px;
+    min-width: 260px;
+    margin-top: -643px;
+    margin-bottom: 585px;
+    min-height: 58px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19.200000762939453px;
+  }
+  .Experience-intriguin-outer {
+    pointer-events: none;
+    z-index: 19;
+    position: relative;
+    display: flex;
+  }
+  .emojione-eyes {
+    position: relative;
+    z-index: 36;
+    pointer-events: none;
+    margin-left: 286px;
+    width: 19px;
+    min-width: 19px;
+    height: 19px;
+    margin-top: -602px;
+    margin-bottom: 583px;
+    min-height: 19px;
+    content: url(assets/images/emojione_eyes.png);
+  }
+  .emojione-eyes-outer {
+    pointer-events: none;
+    z-index: 36;
+    position: relative;
+    display: flex;
+  }
+  .Group-106 {
+    position: relative;
+    z-index: 32;
+    pointer-events: auto;
+    cursor: pointer;
+    min-width: 120.54px;
+    min-height: 42.51px;
+    width: 100%;
+    height: 100%;
+  }
+  .Group-106-outer {
+    pointer-events: none;
+    z-index: 32;
+    position: relative;
+    display: flex;
+  }
+  .Group-106-url {
+    text-decoration: none;
+    margin-left: 54px;
+    width: 120.54px;
+    height: 42.51px;
+    margin-top: -552px;
+    margin-bottom: 509.49px;
+  }
+  .Group-12 {
+    position: relative;
+    z-index: 33;
+    pointer-events: none;
+    margin-left: 0px;
+    width: 120.54px;
+    min-width: 120.54px;
+    height: 42.51px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    min-height: 42.51px;
+  }
+  .Group-12-outer {
+    pointer-events: none;
+    z-index: 33;
+    position: relative;
+    display: flex;
+  }
+  .Cari-Sekarang {
+    position: relative;
+    z-index: 35;
+    pointer-events: auto;
+    margin-left: -3.3184005309440843%;
+    width: 82.6281732205077%;
+    height: 17.13px;
+    margin-top: -5.3799999999999955px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 700;
+    font-size: 12.68817138671875px;
+    line-height: 170.02840340137482%;
+  }
+  .Cari-Sekarang-outer {
+    pointer-events: none;
+    z-index: 35;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    align-items: center;
+  }
+  .Rectangle-5-Copy {
+    position: relative;
+    z-index: 34;
+    pointer-events: none;
+    margin-left: -11.614401858304296%;
+    width: 100%;
+    height: 100%;
+    margin-top: 0%;
+    content: url(assets/images/Rectangle_5_Copy.png);
+  }
+  .Rectangle-5-Copy-outer {
+    pointer-events: none;
+    z-index: 34;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+  .Our-Backers {
+    position: relative;
+    z-index: 21;
+    pointer-events: none;
+    opacity: 0.2;
+    margin-left: 60px;
+    width: 220px;
+    min-width: 220px;
+    margin-top: -455px;
+    margin-bottom: 397px;
+    min-height: 58px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 700;
+    font-size: 35.40983581542969px;
+    line-height: 39.34426498413086px;
+  }
+  .Our-Backers-outer {
+    pointer-events: none;
+    z-index: 21;
+    position: relative;
+    display: flex;
+  }
+  .Group-114 {
+    position: relative;
+    z-index: 26;
+    pointer-events: auto;
+    margin-left: 70px;
+    width: 200px;
+    min-width: 200px;
+    height: 142px;
+    margin-top: -392px;
+    margin-bottom: 250px;
+    min-height: 142px;
+  }
+  .Group-114-outer {
+    pointer-events: none;
+    z-index: 26;
+    position: relative;
+    display: flex;
+  }
+  .Group-105 {
+    position: relative;
+    z-index: 27;
+    pointer-events: none;
+    margin-left: 0px;
+    width: 200px;
+    min-width: 200px;
+    height: 142px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    min-height: 142px;
+  }
+  .Group-105-outer {
+    pointer-events: none;
+    z-index: 27;
+    position: relative;
+    display: flex;
+  }
+  .Search-Box {
+    position: relative;
+    z-index: 28;
+    pointer-events: none;
+    margin-left: 0px;
+    width: 200px;
+    min-width: 200px;
+    height: 142px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    min-height: 142px;
+  }
+  .Search-Box-outer {
+    pointer-events: none;
+    z-index: 28;
+    position: relative;
+    display: flex;
+  }
+  .Rectangle-5 {
+    position: relative;
+    z-index: 29;
+    pointer-events: none;
+    margin-left: 0%;
+    width: 100%;
+    height: 100%;
+    margin-top: 0%;
+    background-color: rgba(255, 255, 255, 1);
+    filter: drop-shadow(
+      0px 9.375001907348633px 14.062501907348633px
+        rgba(64, 72, 82, 0.10000000149011612)
+    );
+    border-radius: 20px;
+  }
+  .Rectangle-5-outer {
+    pointer-events: none;
+    z-index: 29;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+  .image-5 {
+    position: relative;
+    z-index: 30;
+    pointer-events: none;
+    margin-left: 28px;
+    width: 144px;
+    min-width: 144px;
+    height: 21.06px;
+    margin-top: -113px;
+    margin-bottom: 91.94000000000005px;
+    min-height: 21.06px;
+    content: url(assets/images/image_5.png);
+  }
+  .image-5-outer {
+    pointer-events: none;
+    z-index: 30;
+    position: relative;
+    display: flex;
+  }
+  .image-6 {
+    position: relative;
+    z-index: 31;
+    pointer-events: none;
+    margin-left: 42px;
+    width: 115.46px;
+    min-width: 115.46px;
+    height: 37px;
+    margin-top: -66px;
+    margin-bottom: 29px;
+    min-height: 37px;
+    content: url(assets/images/image_6.png);
+  }
+  .image-6-outer {
+    pointer-events: none;
+    z-index: 31;
+    position: relative;
+    display: flex;
+  }
+  .team-zevamp-com---20 {
+    position: relative;
+    z-index: 25;
+    pointer-events: none;
+    opacity: 0.4;
+    margin-left: 60px;
+    width: 223px;
+    min-width: 223px;
+    margin-top: -202px;
+    margin-bottom: 107px;
+    min-height: 95px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21.600000381469727px;
+  }
+  .team-zevamp-com---20-outer {
+    pointer-events: none;
+    z-index: 25;
+    position: relative;
+    display: flex;
+  }
+  .Desktop---4 {
+    display: none;
+  }
+  .Desktop---4-outer {
+    display: none;
+  }
+  .Vectary-texture-1 {
+    display: none;
+  }
+  .Vectary-texture-1-outer {
+    display: none;
+  }
+  .Group-104-1 {
+    display: none;
+  }
+  .Group-104-1-outer {
+    display: none;
+  }
+  .A-LIVE-moderated-pla-1 {
+    display: none;
+  }
+  .A-LIVE-moderated-pla-1-outer {
+    display: none;
+  }
+  .Beta-version--Exclus-1 {
+    display: none;
+  }
+  .Beta-version--Exclus-1-outer {
+    display: none;
+  }
+  .image-4 {
+    display: none;
+  }
+  .image-4-outer {
+    display: none;
+  }
+  .q500--meet-environme-1 {
+    display: none;
+  }
+  .q500--meet-environme-1-outer {
+    display: none;
+  }
+  .Experience-intriguin-1 {
+    display: none;
+  }
+  .Experience-intriguin-1-outer {
+    display: none;
+  }
+  .emojione-eyes-1 {
+    display: none;
+  }
+  .emojione-eyes-1-outer {
+    display: none;
+  }
+  .Group-36 {
+    display: none;
+  }
+  .Group-36-outer {
+    display: none;
+  }
+  .backers-img {
+    display: none;
+  }
+  .backers-img-outer {
+    display: none;
+  }
+  .Our-Backers-1 {
+    display: none;
+  }
+  .Our-Backers-1-outer {
+    display: none;
+  }
+  .team-zevamp-com {
+    display: none;
+  }
+  .team-zevamp-com-outer {
+    display: none;
+  }
+  .q--2022-zevamp-com-- {
+    display: none;
+  }
+  .q--2022-zevamp-com---outer {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .Page {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    pointer-events: auto;
+  }
+  .Page-outer {
+    pointer-events: none;
+    z-index: 1;
+  }
+  .Android-Large---1 {
+    display: none;
+  }
+  .Android-Large---1-outer {
+    display: none;
+  }
+  .Group-104 {
+    display: none;
+  }
+  .Group-104-outer {
+    display: none;
+  }
+  .A-LIVE-moderated-pla {
+    display: none;
+  }
+  .A-LIVE-moderated-pla-outer {
+    display: none;
+  }
+  .Beta-version--Exclus {
+    display: none;
+  }
+  .Beta-version--Exclus-outer {
+    display: none;
+  }
+  .Vectary-texture {
+    display: none;
+  }
+  .Vectary-texture-outer {
+    display: none;
+  }
+  .image-7 {
+    display: none;
+  }
+  .image-7-outer {
+    display: none;
+  }
+  .q500--meet-environme {
+    display: none;
+  }
+  .q500--meet-environme-outer {
+    display: none;
+  }
+  .Experience-intriguin {
+    display: none;
+  }
+  .Experience-intriguin-outer {
+    display: none;
+  }
+  .emojione-eyes {
+    display: none;
+  }
+  .emojione-eyes-outer {
+    display: none;
+  }
+  .Group-106 {
+    display: none;
+  }
+  .Group-106-outer {
+    display: none;
+  }
+  .Group-12 {
+    display: none;
+  }
+  .Group-12-outer {
+    display: none;
+  }
+  .Cari-Sekarang {
+    display: none;
+  }
+  .Cari-Sekarang-outer {
+    display: none;
+  }
+  .Rectangle-5-Copy {
+    display: none;
+  }
+  .Rectangle-5-Copy-outer {
+    display: none;
+  }
+  .Our-Backers {
+    display: none;
+  }
+  .Our-Backers-outer {
+    display: none;
+  }
+  .Group-114 {
+    display: none;
+  }
+  .Group-114-outer {
+    display: none;
+  }
+  .Group-105 {
+    display: none;
+  }
+  .Group-105-outer {
+    display: none;
+  }
+  .Search-Box {
+    display: none;
+  }
+  .Search-Box-outer {
+    display: none;
+  }
+  .Rectangle-5 {
+    display: none;
+  }
+  .Rectangle-5-outer {
+    display: none;
+  }
+  .image-5 {
+    display: none;
+  }
+  .image-5-outer {
+    display: none;
+  }
+  .image-6 {
+    display: none;
+  }
+  .image-6-outer {
+    display: none;
+  }
+  .team-zevamp-com---20 {
+    display: none;
+  }
+  .team-zevamp-com---20-outer {
+    display: none;
+  }
+  .Desktop---4 {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+    width: 100%;
+    margin-left: 0;
+    height: 1626px;
+    min-width: 450px;
+    max-width: 1440px;
+    margin: auto;
+    background-color: rgba(1, 22, 39, 1);
+    overflow: hidden;
+  }
+  .Desktop---4-outer {
+    pointer-events: none;
+    z-index: 2;
+  }
+  .Vectary-texture-1 {
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
+    margin-left: 533px;
+    width: 907px;
+    min-width: 907px;
+    height: 771px;
+    margin-top: 0px;
+    margin-bottom: 855px;
+    min-height: 771px;
+    content: url(assets/images/Vectary_texture_1.png);
+  }
+  .Vectary-texture-1-outer {
+    pointer-events: none;
+    z-index: 10;
+    position: relative;
+    display: flex;
+  }
+  .Group-104-1 {
+    position: relative;
+    z-index: 3;
+    pointer-events: none;
+    margin-left: 150px;
+    width: 165.15px;
+    min-width: 165.15px;
+    height: 52px;
+    margin-top: -1567px;
+    margin-bottom: 1515px;
+    min-height: 52px;
+    content: url(assets/images/Group_104_1.png);
+  }
+  .Group-104-1-outer {
+    pointer-events: none;
+    z-index: 3;
+    position: relative;
+    display: flex;
+  }
+  .A-LIVE-moderated-pla-1 {
+    position: relative;
+    z-index: 4;
+    pointer-events: none;
+    margin-left: 150px;
+    width: 509px;
+    min-width: 509px;
+    margin-top: -1365px;
+    margin-bottom: 1247px;
+    min-height: 118px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 65.5999984741211px;
+  }
+  .A-LIVE-moderated-pla-1-outer {
+    pointer-events: none;
+    z-index: 4;
+    position: relative;
+    display: flex;
+  }
+  .Beta-version--Exclus-1 {
+    position: relative;
+    z-index: 7;
+    pointer-events: none;
+    opacity: 0.4;
+    margin-left: 150px;
+    width: 414px;
+    min-width: 428px;
+    margin-top: -1226px;
+    margin-bottom: 1173px;
+    min-height: 53px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32.79999923706055px;
+  }
+  .Beta-version--Exclus-1-outer {
+    pointer-events: none;
+    z-index: 7;
+    position: relative;
+    display: flex;
+  }
+  .image-4 {
+    position: relative;
+    z-index: 8;
+    pointer-events: none;
+    margin-left: 150px;
+    width: 172.27px;
+    min-width: 172.27px;
+    height: 38px;
+    margin-top: -1146px;
+    margin-bottom: 1108px;
+    min-height: 38px;
+    content: url(assets/images/image_4.png);
+  }
+  .image-4-outer {
+    pointer-events: none;
+    z-index: 8;
+    position: relative;
+    display: flex;
+  }
+  .q500--meet-environme-1 {
+    position: relative;
+    z-index: 6;
+    pointer-events: none;
+    opacity: 0.2;
+    margin-left: 150px;
+    width: 519px;
+    min-width: 519px;
+    margin-top: -1007px;
+    margin-bottom: 889px;
+    min-height: 118px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 80px;
+  }
+  .q500--meet-environme-1-outer {
+    pointer-events: none;
+    z-index: 6;
+    position: relative;
+    display: flex;
+  }
+  .Experience-intriguin-1 {
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+    margin-left: 150px;
+    width: 718px;
+    min-width: 718px;
+    margin-top: -813px;
+    margin-bottom: 695px;
+    min-height: 118px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32.79999923706055px;
+  }
+  .Experience-intriguin-1-outer {
+    pointer-events: none;
+    z-index: 5;
+    position: relative;
+    display: flex;
+  }
+  .emojione-eyes-1 {
+    position: relative;
+    z-index: 11;
+    pointer-events: none;
+    margin-left: 722px;
+    width: 42.99px;
+    min-width: 42.99px;
+    height: 42.99px;
+    margin-top: -741px;
+    margin-bottom: 698.01px;
+    min-height: 42.99px;
+    content: url(assets/images/emojione_eyes_1.png);
+  }
+  .emojione-eyes-1-outer {
+    pointer-events: none;
+    z-index: 11;
+    position: relative;
+    display: flex;
+  }
+  .Group-36 {
+    position: relative;
+    z-index: 9;
+    pointer-events: auto;
+    cursor: pointer;
+    min-width: 550px;
+    min-height: 100px;
+    content: url(assets/images/Group_36.png);
+    width: 100%;
+    height: 100%;
+  }
+  .Group-36-outer {
+    pointer-events: none;
+    z-index: 9;
+    position: relative;
+    display: flex;
+  }
+  .Group-36-url {
+    text-decoration: none;
+    margin-left: 122px;
+    width: 504px;
+    height: 100px;
+    margin-top: -671px;
+    margin-bottom: 571px;
+  }
+  .backers-img {
+    position: relative;
+    z-index: 14;
+    pointer-events: none;
+    margin-left: 580px;
+    width: 750.51px;
+    min-width: 600px;
+    height: 150px;
+    margin-top: -426px;
+    margin-bottom: 276px;
+    min-height: 150px;
+    content: url(assets/images/backers_img.png);
+  }
+  .backers-img-outer {
+    pointer-events: none;
+    z-index: 14;
+    position: relative;
+    display: flex;
+  }
+  .Our-Backers-1 {
+    position: relative;
+    z-index: 15;
+    pointer-events: none;
+    opacity: 0.2;
+    margin-left: 150px;
+    width: 451px;
+    min-width: 451px;
+    margin-top: -426px;
+    margin-bottom: 308px;
+    min-height: 118px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 80px;
+  }
+  .Our-Backers-1-outer {
+    pointer-events: none;
+    z-index: 15;
+    position: relative;
+    display: flex;
+  }
+  .team-zevamp-com {
+    position: relative;
+    z-index: 13;
+    pointer-events: none;
+    opacity: 0.4;
+    margin-left: 1064px;
+    width: 236px;
+    min-width: 236px;
+    margin-top: -212px;
+    margin-bottom: 162px;
+    min-height: 50px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32.79999923706055px;
+  }
+  .team-zevamp-com-outer {
+    pointer-events: none;
+    z-index: 13;
+    position: relative;
+    display: flex;
+  }
+  .q--2022-zevamp-com-- {
+    position: relative;
+    z-index: 12;
+    pointer-events: none;
+    opacity: 0.4;
+    margin-left: 150px;
+    width: 429px;
+    min-width: 460px;
+    margin-top: -204px;
+    margin-bottom: 170px;
+    min-height: 34px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32.79999923706055px;
+  }
+  .q--2022-zevamp-com---outer {
+    pointer-events: none;
+    z-index: 12;
+    position: relative;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1300px) {
+  .Page {
+    zoom: 0.6;
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    pointer-events: auto;
+  }
+  .Page-outer {
+    pointer-events: none;
+    z-index: 1;
+  }
+  .Android-Large---1 {
+    display: none;
+  }
+  .Android-Large---1-outer {
+    display: none;
+  }
+  .Group-104 {
+    display: none;
+  }
+  .Group-104-outer {
+    display: none;
+  }
+  .A-LIVE-moderated-pla {
+    display: none;
+  }
+  .A-LIVE-moderated-pla-outer {
+    display: none;
+  }
+  .Beta-version--Exclus {
+    display: none;
+  }
+  .Beta-version--Exclus-outer {
+    display: none;
+  }
+  .Vectary-texture {
+    display: none;
+  }
+  .Vectary-texture-outer {
+    display: none;
+  }
+  .image-7 {
+    display: none;
+  }
+  .image-7-outer {
+    display: none;
+  }
+  .q500--meet-environme {
+    display: none;
+  }
+  .q500--meet-environme-outer {
+    display: none;
+  }
+  .Experience-intriguin {
+    display: none;
+  }
+  .Experience-intriguin-outer {
+    display: none;
+  }
+  .emojione-eyes {
+    display: none;
+  }
+  .emojione-eyes-outer {
+    display: none;
+  }
+  .Group-106 {
+    display: none;
+  }
+  .Group-106-outer {
+    display: none;
+  }
+  .Group-12 {
+    display: none;
+  }
+  .Group-12-outer {
+    display: none;
+  }
+  .Cari-Sekarang {
+    display: none;
+  }
+  .Cari-Sekarang-outer {
+    display: none;
+  }
+  .Rectangle-5-Copy {
+    display: none;
+  }
+  .Rectangle-5-Copy-outer {
+    display: none;
+  }
+  .Our-Backers {
+    display: none;
+  }
+  .Our-Backers-outer {
+    display: none;
+  }
+  .Group-114 {
+    display: none;
+  }
+  .Group-114-outer {
+    display: none;
+  }
+  .Group-105 {
+    display: none;
+  }
+  .Group-105-outer {
+    display: none;
+  }
+  .Search-Box {
+    display: none;
+  }
+  .Search-Box-outer {
+    display: none;
+  }
+  .Rectangle-5 {
+    display: none;
+  }
+  .Rectangle-5-outer {
+    display: none;
+  }
+  .image-5 {
+    display: none;
+  }
+  .image-5-outer {
+    display: none;
+  }
+  .image-6 {
+    display: none;
+  }
+  .image-6-outer {
+    display: none;
+  }
+  .team-zevamp-com---20 {
+    display: none;
+  }
+  .team-zevamp-com---20-outer {
+    display: none;
+  }
+  .Desktop---4 {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+    width: 100%;
+    margin-left: 0;
+    height: 1626px;
+    min-width: 450px;
+    max-width: 1440px;
+    margin: auto;
+    background-color: rgba(1, 22, 39, 1);
+    overflow: hidden;
+  }
+  .Desktop---4-outer {
+    pointer-events: none;
+    z-index: 2;
+  }
+  .Vectary-texture-1 {
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
+    margin-left: 533px;
+    width: 907px;
+    min-width: 907px;
+    height: 771px;
+    margin-top: 0px;
+    margin-bottom: 855px;
+    min-height: 771px;
+    content: url(assets/images/Vectary_texture_1.png);
+  }
+  .Vectary-texture-1-outer {
+    pointer-events: none;
+    z-index: 10;
+    position: relative;
+    display: flex;
+  }
+  .Group-104-1 {
+    position: relative;
+    z-index: 3;
+    pointer-events: none;
+    margin-left: 150px;
+    width: 165.15px;
+    min-width: 165.15px;
+    height: 52px;
+    margin-top: -1567px;
+    margin-bottom: 1515px;
+    min-height: 52px;
+    content: url(assets/images/Group_104_1.png);
+  }
+  .Group-104-1-outer {
+    pointer-events: none;
+    z-index: 3;
+    position: relative;
+    display: flex;
+  }
+  .A-LIVE-moderated-pla-1 {
+    position: relative;
+    z-index: 4;
+    pointer-events: none;
+    margin-left: 150px;
+    width: 509px;
+    min-width: 509px;
+    margin-top: -1365px;
+    margin-bottom: 1247px;
+    min-height: 118px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 65.5999984741211px;
+  }
+  .A-LIVE-moderated-pla-1-outer {
+    pointer-events: none;
+    z-index: 4;
+    position: relative;
+    display: flex;
+  }
+  .Beta-version--Exclus-1 {
+    position: relative;
+    z-index: 7;
+    pointer-events: none;
+    opacity: 0.4;
+    margin-left: 150px;
+    width: 414px;
+    min-width: 428px;
+    margin-top: -1226px;
+    margin-bottom: 1173px;
+    min-height: 53px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32.79999923706055px;
+  }
+  .Beta-version--Exclus-1-outer {
+    pointer-events: none;
+    z-index: 7;
+    position: relative;
+    display: flex;
+  }
+  .image-4 {
+    position: relative;
+    z-index: 8;
+    pointer-events: none;
+    margin-left: 150px;
+    width: 172.27px;
+    min-width: 172.27px;
+    height: 38px;
+    margin-top: -1146px;
+    margin-bottom: 1108px;
+    min-height: 38px;
+    content: url(assets/images/image_4.png);
+  }
+  .image-4-outer {
+    pointer-events: none;
+    z-index: 8;
+    position: relative;
+    display: flex;
+  }
+  .q500--meet-environme-1 {
+    position: relative;
+    z-index: 6;
+    pointer-events: none;
+    opacity: 0.2;
+    margin-left: 150px;
+    width: 519px;
+    min-width: 519px;
+    margin-top: -1007px;
+    margin-bottom: 889px;
+    min-height: 118px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 80px;
+  }
+  .q500--meet-environme-1-outer {
+    pointer-events: none;
+    z-index: 6;
+    position: relative;
+    display: flex;
+  }
+  .Experience-intriguin-1 {
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+    margin-left: 150px;
+    width: 718px;
+    min-width: 718px;
+    margin-top: -813px;
+    margin-bottom: 695px;
+    min-height: 118px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32.79999923706055px;
+  }
+  .Experience-intriguin-1-outer {
+    pointer-events: none;
+    z-index: 5;
+    position: relative;
+    display: flex;
+  }
+  .emojione-eyes-1 {
+    position: relative;
+    z-index: 11;
+    pointer-events: none;
+    margin-left: 722px;
+    width: 42.99px;
+    min-width: 42.99px;
+    height: 42.99px;
+    margin-top: -741px;
+    margin-bottom: 698.01px;
+    min-height: 42.99px;
+    content: url(assets/images/emojione_eyes_1.png);
+  }
+  .emojione-eyes-1-outer {
+    pointer-events: none;
+    z-index: 11;
+    position: relative;
+    display: flex;
+  }
+  .Group-36 {
+    position: relative;
+    z-index: 9;
+    pointer-events: auto;
+    cursor: pointer;
+    min-width: 550px;
+    min-height: 100px;
+    content: url(assets/images/Group_36.png);
+    width: 100%;
+    height: 100%;
+  }
+  .Group-36-outer {
+    pointer-events: none;
+    z-index: 9;
+    position: relative;
+    display: flex;
+  }
+  .Group-36-url {
+    text-decoration: none;
+    margin-left: 122px;
+    width: 504px;
+    height: 100px;
+    margin-top: -671px;
+    margin-bottom: 571px;
+  }
+  .backers-img {
+    position: relative;
+    z-index: 14;
+    pointer-events: none;
+    margin-left: 580px;
+    width: 750.51px;
+    min-width: 600px;
+    height: 150px;
+    margin-top: -426px;
+    margin-bottom: 276px;
+    min-height: 150px;
+    content: url(assets/images/backers_img.png);
+  }
+  .backers-img-outer {
+    pointer-events: none;
+    z-index: 14;
+    position: relative;
+    display: flex;
+  }
+  .Our-Backers-1 {
+    position: relative;
+    z-index: 15;
+    pointer-events: none;
+    opacity: 0.2;
+    margin-left: 150px;
+    width: 451px;
+    min-width: 451px;
+    margin-top: -426px;
+    margin-bottom: 308px;
+    min-height: 118px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 80px;
+  }
+  .Our-Backers-1-outer {
+    pointer-events: none;
+    z-index: 15;
+    position: relative;
+    display: flex;
+  }
+  .team-zevamp-com {
+    position: relative;
+    z-index: 13;
+    pointer-events: none;
+    opacity: 0.4;
+    margin-left: 1064px;
+    width: 236px;
+    min-width: 236px;
+    margin-top: -212px;
+    margin-bottom: 162px;
+    min-height: 50px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32.79999923706055px;
+  }
+  .team-zevamp-com-outer {
+    pointer-events: none;
+    z-index: 13;
+    position: relative;
+    display: flex;
+  }
+  .q--2022-zevamp-com-- {
+    position: relative;
+    z-index: 12;
+    pointer-events: none;
+    opacity: 0.4;
+    margin-left: 150px;
+    width: 429px;
+    min-width: 460px;
+    margin-top: -204px;
+    margin-bottom: 170px;
+    min-height: 34px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-family: Noto Sans;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32.79999923706055px;
+  }
+  .q--2022-zevamp-com---outer {
+    pointer-events: none;
+    z-index: 12;
+    position: relative;
+    display: flex;
+  }
+}

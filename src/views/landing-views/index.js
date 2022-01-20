@@ -6,7 +6,6 @@ export const LandingViews = () => {
   return (
     <Suspense fallback={<Landing/>}>
       <Switch>
-        <Route path={`/audio-box-demo`} component={lazy(() => import("./audioBox"))} />
         <Route exact path={`/`} component={lazy(() => import("./landing"))} />
         <Redirect from={`/`} to={`/`} />
       </Switch>

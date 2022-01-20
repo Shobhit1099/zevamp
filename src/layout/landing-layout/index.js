@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import { LandingViews } from "../../views/landing-views";
 
-export const LayoutLayout = () => {
+export const LandingLayout = () => {
   return (
     <div>
       <Switch>
@@ -12,4 +12,4 @@ export const LayoutLayout = () => {
   );
 };
 
-export default LayoutLayout;
+export default LandingLayout;

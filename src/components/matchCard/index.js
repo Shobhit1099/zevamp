@@ -8,7 +8,7 @@ function MatchCard(props) {
   return (
     <Card
       hoverable
-      className="ant-card-match"
+      className={props.matchCardClass}
       style={{ marginTop: "24px", width: "100%" }}
     >
       <Row align="middle" justify="space-between" gutter={[4, 16]}>

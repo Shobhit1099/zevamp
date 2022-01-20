@@ -8,8 +8,6 @@ import { useMediaQuery } from "react-responsive";
 
 const { Panel } = Collapse;
 
-//const text = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna maecenas vestibulum mattis nibh tincidunt adipiscing bibendum.`;
-
 function Faq() {
   const isBelow900 = useMediaQuery({ query: "(max-width: 900px)" });
   const isBelow768 = useMediaQuery({ query: "(max-width: 768px)" });

@@ -3,7 +3,24 @@
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.08);
 }
 
-.ant-card-match {
-  background-color: black;
+.ant-card-match1 {
   border-radius: 42px;
+  background-image: linear-gradient(
+      180deg,
+      #000000 0%,
+      rgba(0, 0, 0, 0.8) 51.04%,
+      #000000 100%
+    ),
+    url("../../images/unsplash1.png");
+}
+
+.ant-card-match2 {
+  border-radius: 42px;
+  background-image: linear-gradient(
+      180deg,
+      #000000 0%,
+      rgba(0, 0, 0, 0.8) 51.04%,
+      #000000 100%
+    ),
+    url("../../images/unsplash2.png");
 }

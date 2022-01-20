@@ -22,6 +22,18 @@ export default function AppLayout(props) {
             <img src={Logo} width={250} height={60}></img>
           </Link>
         </div>
+        <div
+          style={{
+            backgroundColor: "#FFB800",
+            padding: "20px",
+            borderRadius: "14px",
+            marginLeft: "17%",
+            marginTop: "30px",
+          }}
+        >
+          <div style={{ fontWeight: 700 }}>Notification</div>
+          <div style={{ fontWeight: 500 }}>Email account verified!</div>
+        </div>
         <Menu
           theme="dark"
           style={{
@@ -59,14 +71,16 @@ export default function AppLayout(props) {
           }}
         >
           <div>Join now button will activate 10 minutes before the meet.</div>
-          <div style={{ fontWeight: 700 }}>Contact us</div>
+          <a style={{ fontWeight: 700 }} className="contact-anchor">
+            Contact us
+          </a>
           <div style={{ marginTop: "20px" }}>
-            <FaWhatsapp
-              className="text-muted"
-              size={20}
-              style={{ marginRight: "10px" }}
-            />
-            <FaInstagram className="text-muted" size={20} />
+            <a className="contact-anchor">
+              <FaWhatsapp size={20} style={{ marginRight: "10px" }} />
+            </a>
+            <a className="contact-anchor">
+              <FaInstagram size={20} />
+            </a>
             <div style={{ marginTop: "5px" }}>&copy; 2022 Zevamp</div>
           </div>
         </div>

@@ -11,7 +11,19 @@ function Settings() {
       <Title level={3} style={{ textDecoration: "underline" }}>
         <a className="settings-anchor">Changed Preferred meet timings</a>
       </Title>
-      <Title level={3} style={{ textDecoration: "underline" }}>
+      <a
+        style={{
+          position: "absolute",
+          right: 80,
+          top: 80,
+          fontSize: "24px",
+          fontWeight: 700,
+        }}
+        className="settings-anchor"
+      >
+        Logout
+      </a>
+      <Title level={3} style={{marginTop: "30px", textDecoration: "underline" }}>
         <a className="settings-anchor">Email change request</a>
       </Title>
       <Title level={3} style={{ textDecoration: "underline" }}>
@@ -21,6 +33,7 @@ function Settings() {
         rows={8}
         placeholder="New product feature suggestions please..."
         style={{
+          maxWidth: "800px",
           fontSize: "18px",
           padding: "20px",
           marginTop: "30px",
