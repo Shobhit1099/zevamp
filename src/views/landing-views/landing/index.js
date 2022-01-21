@@ -68,11 +68,7 @@ function Landing() {
 
   return (
     <div>
-      <Row
-        gutter={[0, 40]}
-        justify="center"
-        style={{ padding: "30px 40px" }}
-      >
+      <Row gutter={[0, 40]} justify="center" style={{ padding: "30px 40px" }}>
         <Col
           span={24}
           style={{
@@ -108,26 +104,43 @@ function Landing() {
             size={45}
             src={float1}
           />
-          <Title
-            level={1}
-            style={{ fontWeight: 700, margin: "0px" }}
-            className="text-center"
-          >
-            Connect, Express &#38; Grow
-          </Title>
+          {!isTooSmall ? (
+            <Title
+              level={1}
+              style={{ fontWeight: 700, margin: "0px" }}
+              className="text-center"
+            >
+              A LIVE moderated platform <br />
+              to interact better
+            </Title>
+          ) : (
+            <Title
+              level={3}
+              style={{ fontWeight: 700, margin: "0px", fontSize: "24px" }}
+              className="text-center"
+            >
+              A LIVE moderated platform
+              <br />
+              to interact better
+            </Title>
+          )}
           {!isTooSmall ? (
             <div
               className="text-muted text-center font-size-md"
-              style={{ fontWeight: 500, marginLeft: "20px" }}
+              style={{
+                fontWeight: 500,
+                marginLeft: "20px",
+                paddingTop: "15px",
+              }}
             >
-              Brought about 25+ successful meetings in the last month🚀🔥
+              Brought about 30+ successful meetings in the last month🚀🔥
             </div>
           ) : (
             <div
               className="text-muted text-center font-size-md"
-              style={{ fontWeight: 500 }}
+              style={{ fontWeight: 500, paddingTop: "15px" }}
             >
-              Brought about 25+ successful meetings
+              Brought about 30+ successful meetings
               <br />
               in the last month🚀🔥
             </div>
@@ -193,8 +206,8 @@ function Landing() {
             className="img-fluid"
             src={meet}
             alt="google meet"
-            height="467"
-            width="467"
+            height="400"
+            width="400"
           />
 
           <div>
@@ -271,7 +284,7 @@ function Landing() {
           />
           <Card
             hoverable
-            bodyStyle={isTooSmall ? { width: "auto" } : { width: "400px" }}
+            bodyStyle={isTooSmall ? { width: "auto" } : { width: "450px" }}
           >
             <Row align="middle" justify="center" gutter={[0, 24]}>
               <Col
@@ -534,7 +547,7 @@ function Landing() {
             display: "flex",
             justifyContent: "center",
             padding: "0px 40px",
-            marginBottom: "30px"
+            marginBottom: "30px",
           }}
         >
           <Faq />

@@ -16,7 +16,7 @@ function Footer() {
       <Col span={24}>
         <Row
           gutter={[0, 16]}
-          style={{ padding: "15px", backgroundColor: "#011627"}}
+          style={{ padding: "15px", backgroundColor: "#011627" }}
         >
           <Col
             span={24}
@@ -28,31 +28,6 @@ function Footer() {
           >
             <div style={{ fontSize: "24px", color: "white", fontWeight: 500 }}>
               Follow Us
-            </div>
-          </Col>
-          <Col
-            span={24}
-            style={
-              !isTooSmall
-                ? {
-                    display: "flex",
-                    justifyContent: "center",
-                    paddingRight: "125px",
-                    paddingLeft: "125px",
-                  }
-                : {
-                    display: "flex",
-                    justifyContent: "center",
-                    paddingRight: "20px",
-                    paddingLeft: "20px",
-                  }
-            }
-          >
-            <div
-              style={{ fontSize: "16px", fontWeight: 100, color: "white" }}
-              className="text-center"
-            >
-              Share your progress and join the conversation
             </div>
           </Col>
           <Col
@@ -122,7 +97,7 @@ function Footer() {
         </Row>
       </Col>
 
-      <Col span={24} style={{marginTop: "-1px"}}>
+      <Col span={24} style={{ marginTop: "-1px" }}>
         <Row justify="center" gutter={[0, 32]}>
           <Col
             md={12}
@@ -185,11 +160,11 @@ function Footer() {
                         }
                   }
                 >
-                  Zevamp brings to you an entirely innovative experience by
-                  pairing you with a completely different personality as that of
-                  yours. We carry you to the most fantastic video talk with
-                  them, delivering an experience that can indeed advise your
-                  better future.
+                  The unknown knows no rumour' - with a firm belief in these
+                  words, Zevamp aspires to bring everyone along a fruitful
+                  journey through interactive meet sessions where they discover
+                  their ultimate potential and the fun to be the real you, with
+                  a tinge of 'spice'!
                 </div>
               </div>
             </div>
