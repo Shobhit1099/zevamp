@@ -1,315 +1,549 @@
-import React from "react";
-import "./index.css";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Logo1 from "../../../assets/svg/brand-icon.svg";
+import { AiFillMail, AiFillLock } from "react-icons/ai";
+import Footer from "../../../components/footer";
+import {
+  Row,
+  Col,
+  Typography,
+  Card,
+  Button,
+  Avatar,
+  Rate,
+  Skeleton,
+  Modal,
+  Input,
+} from "antd";
+import meet from "../../../assets/images/meet.png";
+import Typeform from "../../../components/typeform";
+import Faq from "../../../components/faq";
+import { useMediaQuery } from "react-responsive";
+import SwiperCard from "../../../components/swiper";
+import "react-multi-carousel/lib/styles.css";
+import Testimonial from "../../../components/testimonial";
+import Roller from "../../../components/roller";
+import float1 from "../../../assets/images/users/float1.jpg";
+import float2 from "../../../assets/images/users/float2.jpg";
+import float3 from "../../../assets/images/users/float3.jpg";
+import float4 from "../../../assets/images/users/float4.jpg";
+import float5 from "../../../assets/images/users/float5.jpg";
+import float6 from "../../../assets/images/users/float6.jpg";
+import float7 from "../../../assets/images/users/float7.jpg";
+import float8 from "../../../assets/images/users/float8.jpg";
+import loginDummy1 from "../../../assets/images/loginDummy1.png";
+import loginDummy2 from "../../../assets/images/loginDummy2.png";
+import loginDummy3 from "../../../assets/images/loginDummy3.png";
+import loginDummy4 from "../../../assets/images/loginDummy4.png";
+
+const { Title } = Typography;
 
 function Landing() {
+  const isSmall = useMediaQuery({ query: "(max-width: 768px)" });
+  const isNotLarge = useMediaQuery({ query: "(max-width: 992px)" });
+  const isTooSmall = useMediaQuery({ query: "(max-width: 576px)" });
+  const isBelow530 = useMediaQuery({ query: "(max-width: 530px)" });
+  const isBelow450 = useMediaQuery({ query: "(max-width: 450px)" });
+  const isBelow1050 = useMediaQuery({ query: "(max-width: 1050px)" });
+  const [items, setItems] = useState();
+  const [loading, setloading] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  useEffect(() => {
+    fetch("https://zevamp.herokuapp.com/")
+      .then((res) => res.json())
+      .then((data) => setItems(data));
+  }, []);
+
   return (
-    <body class="websiteBody">
-      <div class="Page-outer">
-        <div id="Page" data-name="Page" class="Page">
-          <div class="Android-Large---1-outer">
+    <div>
+      <Row
+        gutter={[0, 40]}
+        justify="center"
+        style={{ padding: "30px 40px" }}
+      >
+        <Col
+          span={24}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Link to={"/"}>
+            <img src={Logo1} />
+          </Link>
+        </Col>
+
+        <Col
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+          span={24}
+        >
+          <Avatar
+            className="floating"
+            style={
+              !isNotLarge
+                ? {
+                    position: "absolute",
+                    left: "7vw",
+                    boxShadow: "4px 5px 7px 2px rgba(0,0,0,0.2)",
+                  }
+                : { display: "none" }
+            }
+            size={45}
+            src={float1}
+          />
+          <Title
+            level={1}
+            style={{ fontWeight: 700, margin: "0px" }}
+            className="text-center"
+          >
+            Connect, Express &#38; Grow
+          </Title>
+          {!isTooSmall ? (
             <div
-              id="Android-Large---1"
-              data-name="Android Large - 1"
-              class="Android-Large---1"
+              className="text-muted text-center font-size-md"
+              style={{ fontWeight: 500, marginLeft: "20px" }}
             >
-              <div class="Group-104-outer">
-                <img
-                  id="Group-104"
-                  data-name="Group 104"
-                  alt="Group 104"
-                  class="Group-104"
-                />
-              </div>
-              <div class="A-LIVE-moderated-pla-outer">
-                <div
-                  id="A-LIVE-moderated-pla"
-                  data-name="A LIVE moderated platform to interact better with people."
-                  class="A-LIVE-moderated-pla"
+              Brought about 25+ successful meetings in the last month🚀🔥
+            </div>
+          ) : (
+            <div
+              className="text-muted text-center font-size-md"
+              style={{ fontWeight: 500 }}
+            >
+              Brought about 25+ successful meetings
+              <br />
+              in the last month🚀🔥
+            </div>
+          )}
+          <Avatar
+            className="floating"
+            style={
+              !isNotLarge
+                ? {
+                    position: "absolute",
+                    right: "15vw",
+                    top: "-25px",
+                    boxShadow: "4px 5px 7px 2px rgba(0,0,0,0.2)",
+                  }
+                : { display: "none" }
+            }
+            size={45}
+            src={float2}
+          />
+        </Col>
+
+        <Col
+          span={24}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <div>
+            <Avatar
+              className="floating"
+              style={
+                !isNotLarge
+                  ? {
+                      position: "absolute",
+                      left: "15vw",
+                      top: "50px",
+                      boxShadow: "4px 5px 7px 2px rgba(0,0,0,0.2)",
+                    }
+                  : { display: "none" }
+              }
+              size={45}
+              src={float3}
+            />
+            <Avatar
+              className="floating"
+              style={
+                !isNotLarge
+                  ? {
+                      position: "absolute",
+                      left: "12vw",
+                      top: "225px",
+                      boxShadow: "4px 5px 7px 2px rgba(0,0,0,0.2)",
+                    }
+                  : { display: "none" }
+              }
+              size={45}
+              src={float4}
+            />
+          </div>
+
+          <img
+            className="img-fluid"
+            src={meet}
+            alt="google meet"
+            height="467"
+            width="467"
+          />
+
+          <div>
+            <Avatar
+              className="floating"
+              style={
+                !isNotLarge
+                  ? {
+                      position: "absolute",
+                      right: "7vw",
+                      top: "50px",
+                      boxShadow: "4px 5px 7px 2px rgba(0,0,0,0.2)",
+                    }
+                  : { display: "none" }
+              }
+              size={45}
+              src={float5}
+            />
+            <Avatar
+              className="floating"
+              style={
+                !isNotLarge
+                  ? {
+                      position: "absolute",
+                      right: "18vw",
+                      top: "150px",
+                      boxShadow: "4px 5px 7px 2px rgba(0,0,0,0.2)",
+                    }
+                  : { display: "none" }
+              }
+              size={45}
+              src={float6}
+            />
+            <Avatar
+              className="floating"
+              style={
+                !isNotLarge
+                  ? {
+                      position: "absolute",
+                      right: "10vw",
+                      top: "250px",
+                      boxShadow: "4px 5px 7px 2px rgba(0,0,0,0.2)",
+                    }
+                  : { display: "none" }
+              }
+              size={45}
+              src={float7}
+            />
+          </div>
+        </Col>
+
+        <Col
+          span={24}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Avatar
+            className="floating"
+            style={
+              !isNotLarge
+                ? {
+                    position: "absolute",
+                    left: "18vw",
+                    top: "75px",
+                    boxShadow: "4px 5px 7px 2px rgba(0,0,0,0.2)",
+                  }
+                : { display: "none" }
+            }
+            size={45}
+            src={float8}
+          />
+          <Card
+            hoverable
+            bodyStyle={isTooSmall ? { width: "auto" } : { width: "400px" }}
+          >
+            <Row align="middle" justify="center" gutter={[0, 24]}>
+              <Col
+                sm={16}
+                xs={24}
+                style={
+                  isTooSmall && {
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }
+                }
+              >
+                <div style={{ fontSize: "14px", color: "#979797" }}>
+                  Are you looking for
+                </div>
+                <div style={{ fontSize: "24px", fontWeight: 500 }}>
+                  <Roller />
+                </div>
+              </Col>
+              <Col
+                sm={8}
+                xs={24}
+                style={{ display: "flex", justifyContent: "center" }}
+              >
+                <Typeform message="SignUp Now" />
+              </Col>
+            </Row>
+          </Card>
+          <div
+            style={{ color: "#7D8186", marginTop: "10px", fontSize: "16px" }}
+          >
+            Click here to{" "}
+            <a className="login-anchor" onClick={showModal}>
+              login
+            </a>
+            <Modal
+              visible={isModalVisible}
+              onOk={handleOk}
+              centered
+              onCancel={handleCancel}
+              width={1200}
+            >
+              <Row gutter={[24, 24]}>
+                <Col
+                  lg={14}
+                  xs={24}
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
                 >
-                  <div key="0">
-                    A LIVE moderated platform to interact better with people.
+                  <div style={{ marginRight: "20px" }}>
+                    <img
+                      className="img-fluid"
+                      src={loginDummy1}
+                      height={100}
+                      width={100}
+                    ></img>
                   </div>
-                </div>
-              </div>
-              <div class="Beta-version--Exclus-outer">
-                <div
-                  id="Beta-version--Exclus"
-                  data-name="Beta version (Exclusive for late teens)."
-                  class="Beta-version--Exclus"
-                >
-                  <div key="0">Exclusive for late teens.</div>
-                </div>
-              </div>
-              <div class="Vectary-texture-outer">
-                <img
-                  id="Vectary-texture"
-                  data-name="Vectary texture"
-                  alt="Vectary texture"
-                  class="Vectary-texture"
-                />
-              </div>
-              <div class="image-7-outer">
-                <img
-                  id="image-7"
-                  data-name="image 7"
-                  alt="image 7"
-                  class="image-7"
-                />
-              </div>
-              <div class="q500--meet-environme-outer">
-                <div
-                  id="q500--meet-environme"
-                  data-name="500+ meet environments"
-                  class="q500--meet-environme"
-                >
-                  <div key="0">500+ meet</div>
-                  <div key="1">environments</div>
-                </div>
-              </div>
-              <div class="Experience-intriguin-outer">
-                <div
-                  id="Experience-intriguin"
-                  data-name="Experience intriguing research-based activities, questions to stimulate out-of-the-box thinking, ice breaker rounds, personality unfolding concepts, and a lot more"
-                  class="Experience-intriguin"
-                >
-                  <div key="0">
-                    Experience intriguing research-based activities, questions
-                    to stimulate out-of-the-box thinking, ice breaker rounds,
-                    personality unfolding concepts, and a lot more
+                  <div style={{ marginRight: "20px" }}>
+                    <img
+                      className="img-fluid"
+                      src={loginDummy2}
+                      height={100}
+                      width={100}
+                    ></img>
                   </div>
-                </div>
-              </div>
-              <div class="emojione-eyes-outer">
-                <img
-                  id="emojione-eyes"
-                  data-name="emojione:eyes"
-                  alt="emojione:eyes"
-                  class="emojione-eyes"
-                />
-              </div>
-              <div class="Group-106-outer">
-                <a
-                  href="https://typeform-impact.typeform.com/to/kBubcUEp"
-                  target="_blank"
-                  class="Group-106-url"
+                  <div style={{ marginRight: "20px" }}>
+                    <img
+                      className="img-fluid"
+                      src={loginDummy3}
+                      height={100}
+                      width={100}
+                    ></img>
+                  </div>
+                  <div style={{ marginRight: "20px" }}>
+                    <img
+                      className="img-fluid"
+                      src={loginDummy4}
+                      height={100}
+                      width={100}
+                    ></img>
+                  </div>
+                </Col>
+                <Col
+                  style={
+                    isNotLarge && {
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }
+                  }
+                  lg={10}
+                  xs={24}
                 >
-                  <div id="Group-106" data-name="Group 106" class="Group-106">
-                    <div class="Group-12-outer">
-                      <div id="Group-12" data-name="Group 12" class="Group-12">
-                        <div class="Cari-Sekarang-outer">
-                          <div
-                            id="Cari-Sekarang"
-                            data-name="Cari Sekarang"
-                            class="Cari-Sekarang"
-                          >
-                            <div key="0">SignUp for FREE</div>
-                          </div>
-                        </div>
-                        <div class="Rectangle-5-Copy-outer">
-                          <img
-                            id="Rectangle-5-Copy"
-                            data-name="Rectangle 5 Copy"
-                            alt="Rectangle 5 Copy"
-                            class="Rectangle-5-Copy"
+                  <div style={{ fontSize: "20px", color: "#98989E" }}>Hey!</div>
+                  <div style={{ fontSize: "24px", fontWeight: 700 }}>
+                    Welcome back
+                  </div>
+                  <form style={{ marginTop: "20px" }}>
+                    <div style={{ marginBottom: "20px" }}>
+                      <div style={{ fontWeight: 500, marginBottom: "5px" }}>
+                        E-Mail or Username
+                      </div>
+                      <Input
+                        size="large"
+                        placeholder="e.g.: elonmusk@mars.com "
+                        prefix={
+                          <AiFillMail
+                            size={20}
+                            style={{ marginTop: "3px" }}
+                            className="text-muted"
                           />
-                        </div>
-                      </div>
+                        }
+                      />
                     </div>
-                  </div>
-                </a>
-              </div>
-              <div class="Our-Backers-outer">
-                <div
-                  id="Our-Backers"
-                  data-name="Our Backers"
-                  class="Our-Backers"
-                >
-                  <div key="0">Our Backers</div>
-                </div>
-              </div>
-              <div class="Group-114-outer">
-                <div id="Group-114" data-name="Group 114" class="Group-114">
-                  <div class="Group-105-outer">
-                    <div id="Group-105" data-name="Group 105" class="Group-105">
-                      <div class="Search-Box-outer">
-                        <div
-                          id="Search-Box"
-                          data-name="Search Box"
-                          class="Search-Box"
-                        >
-                          <div class="Rectangle-5-outer">
-                            <div
-                              id="Rectangle-5"
-                              data-name="Rectangle 5"
-                              alt="Rectangle 5"
-                              class="Rectangle-5"
-                            ></div>
-                          </div>
-                        </div>
+                    <div style={{ marginBottom: "20px" }}>
+                      <div style={{ fontWeight: 500, marginBottom: "5px" }}>
+                        Password
                       </div>
+                      <Input
+                        size="large"
+                        placeholder="e.g.: X Æ A-12"
+                        prefix={
+                          <AiFillLock
+                            size={20}
+                            style={{ marginTop: "1px" }}
+                            className="text-muted"
+                          />
+                        }
+                      />
                     </div>
-                  </div>
-                  <div class="image-5-outer">
-                    <img
-                      id="image-5"
-                      data-name="image 5"
-                      alt="image 5"
-                      class="image-5"
-                    />
-                  </div>
-                  <div class="image-6-outer">
-                    <img
-                      id="image-6"
-                      data-name="image 6"
-                      alt="image 6"
-                      class="image-6"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="team-zevamp-com---20-outer">
-                <div
-                  id="team-zevamp-com---20"
-                  data-name="team@zevamp.com © 2022,zevamp.com. All rights reserved."
-                  class="team-zevamp-com---20"
-                >
-                  <div key="0">team@zevamp.com</div>
-                  <div key="1">© 2022,zevamp.com. All rights reserved.</div>
-                </div>
-              </div>
-            </div>
+                    <Button
+                      block
+                      onClick={handleOk}
+                      type="primary"
+                      size="large"
+                      style={{
+                        maxWidth: "400px",
+                        marginTop: "10px",
+                        marginBottom: "10px",
+                        borderRadius: "25px",
+                      }}
+                    >
+                      Login
+                    </Button>
+                    <div>
+                      New User?{" "}
+                      <a className="signup-anchor" style={{ fontWeight: 500 }}>
+                        Signup here &#8594;
+                      </a>
+                    </div>
+                  </form>
+                </Col>
+              </Row>
+            </Modal>
           </div>
-          <div class="Desktop---4-outer">
-            <div id="Desktop---4" data-name="Desktop - 4" class="Desktop---4">
-              <div class="Vectary-texture-1-outer">
-                <img
-                  id="Vectary-texture-1"
-                  data-name="Vectary texture"
-                  alt="Vectary texture"
-                  class="Vectary-texture-1"
-                />
-              </div>
-              <div class="Group-104-1-outer">
-                <img
-                  id="Group-104-1"
-                  data-name="Group 104"
-                  alt="Group 104"
-                  class="Group-104-1"
-                />
-              </div>
-              <div class="A-LIVE-moderated-pla-1-outer">
-                <div
-                  id="A-LIVE-moderated-pla-1"
-                  data-name="A LIVE moderated platform to interact better with people."
-                  class="A-LIVE-moderated-pla-1"
-                >
-                  <div key="0">
-                    A LIVE moderated platform to interact better with people.
-                  </div>
-                </div>
-              </div>
-              <div class="Beta-version--Exclus-1-outer">
-                <div
-                  id="Beta-version--Exclus-1"
-                  data-name="Beta version (Exclusive for late teens)."
-                  class="Beta-version--Exclus-1"
-                >
-                  <div key="0">Exclusive for late teens.</div>
-                </div>
-              </div>
-              <div class="image-4-outer">
-                <img
-                  id="image-4"
-                  data-name="image 4"
-                  alt="image 4"
-                  class="image-4"
-                />
-              </div>
-              <div class="q500--meet-environme-1-outer">
-                <div
-                  id="q500--meet-environme-1"
-                  data-name="500+ meet environments"
-                  class="q500--meet-environme-1"
-                >
-                  <div key="0">500+ meet</div>
-                  <div key="1">environments</div>
-                </div>
-              </div>
-              <div class="Experience-intriguin-1-outer">
-                <div
-                  id="Experience-intriguin-1"
-                  data-name="Experience intriguing research-based activities, questions to stimulate out-of-the-box thinking, ice breaker rounds, personality unfolding concepts, and a lot more"
-                  class="Experience-intriguin-1"
-                >
-                  <div key="0">
-                    Experience intriguing research-based activities, questions
-                    to stimulate out-of-the-box thinking, ice breaker rounds,
-                    personality unfolding concepts, and a lot more
-                  </div>
-                </div>
-              </div>
-              <div class="emojione-eyes-1-outer">
-                <img
-                  id="emojione-eyes-1"
-                  data-name="emojione:eyes"
-                  alt="emojione:eyes"
-                  class="emojione-eyes-1"
-                />
-              </div>
-              <div class="Group-36-outer">
-                <a
-                  href="https://typeform-impact.typeform.com/to/kBubcUEp"
-                  target="_blank"
-                  class="Group-36-url"
-                >
-                  <img
-                    id="Group-36"
-                    data-name="Group 36"
-                    alt="Group 36"
-                    class="Group-36"
-                  />
-                </a>
-              </div>
-              <div class="backers-img-outer">
-                <img
-                  id="backers-img"
-                  data-name="backers-img"
-                  alt="backers-img"
-                  class="backers-img"
-                />
-              </div>
-              <div class="Our-Backers-1-outer">
-                <div
-                  id="Our-Backers-1"
-                  data-name="Our Backers"
-                  class="Our-Backers-1"
-                >
-                  <div key="0">Our Backers</div>
-                </div>
-              </div>
-              <div class="team-zevamp-com-outer">
-                <div
-                  id="team-zevamp-com"
-                  data-name="team@zevamp.com"
-                  class="team-zevamp-com"
-                >
-                  <div key="0">team@zevamp.com</div>
-                </div>
-              </div>
-              <div class="q--2022-zevamp-com---outer">
-                <div
-                  id="q--2022-zevamp-com--"
-                  data-name="© 2022,zevamp.com. All rights reserved."
-                  class="q--2022-zevamp-com--"
-                >
-                  <div key="0">© 2022,zevamp.com. All rights reserved.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </body>
+        </Col>
+
+        <Col
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+          span={24}
+        >
+          <Title
+            level={2}
+            style={{ fontWeight: 700, margin: "0px" }}
+            className="text-center"
+          >
+            Find out what our amazing users loved <br /> about Zevamp
+          </Title>
+        </Col>
+
+        <Col
+          span={24}
+          style={isSmall ? { display: "none" } : { maxWidth: "1000px" }}
+        >
+          <Row gutter={[48, 24]} justify="center">
+            {console.log(items)}
+            {items ? (
+              items.testimonials.map((item) => {
+                return (
+                  <Col lg={8}>
+                    <Testimonial
+                      image={item.img}
+                      name={item.uname}
+                      data={item.review}
+                      rate={item.rate}
+                    />
+                  </Col>
+                );
+              })
+            ) : (
+              <>
+                <Col lg={8}>
+                  <Testimonial loading={true} />
+                </Col>
+                <Col lg={8}>
+                  <Testimonial loading={true} />
+                </Col>
+                <Col lg={8}>
+                  <Testimonial loading={true} />
+                </Col>
+              </>
+            )}
+          </Row>
+        </Col>
+      </Row>
+
+      <Row
+        style={
+          isSmall
+            ? { display: "block", margin: "18px 5px 40px 5px" }
+            : { display: "none" }
+        }
+      >
+        <Col span={24}>
+          <SwiperCard />
+        </Col>
+      </Row>
+
+      <Row gutter={[0, 24]}>
+        <Col
+          span={24}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          {isBelow450 ? (
+            <Title
+              level={2}
+              style={{ fontWeight: 700 }}
+              className="text-center"
+            >
+              Your Zevamp meet
+              <br />
+              FAQs
+            </Title>
+          ) : (
+            <Title
+              level={2}
+              style={{ fontWeight: 700 }}
+              className="text-center"
+            >
+              Your Zevamp meet FAQs
+            </Title>
+          )}
+        </Col>
+
+        <Col
+          span={24}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            padding: "0px 40px",
+            marginBottom: "30px"
+          }}
+        >
+          <Faq />
+        </Col>
+        <Col>
+          <Footer />
+        </Col>
+      </Row>
+    </div>
   );
 }
 
