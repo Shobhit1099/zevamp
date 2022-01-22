@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo1 from "../../../assets/svg/brand-icon.svg";
 import { AiFillMail, AiFillLock } from "react-icons/ai";
+import { LoadingOutlined } from "@ant-design/icons";
 import Footer from "../../../components/footer";
 import {
   Row,
@@ -13,7 +14,9 @@ import {
   Rate,
   Skeleton,
   Modal,
+  Spin,
   Input,
+  Alert,
 } from "antd";
 import meet from "../../../assets/images/meet.png";
 import Typeform from "../../../components/typeform";
@@ -42,7 +45,7 @@ import "@typeform/embed/build/css/popup.css";
 const { Title } = Typography;
 
 function Landing() {
-    const { toggle } = createPopup("IxhcTSuG");
+  const { toggle } = createPopup("IxhcTSuG");
   const isSmall = useMediaQuery({ query: "(max-width: 768px)" });
   const isNotLarge = useMediaQuery({ query: "(max-width: 992px)" });
   const isTooSmall = useMediaQuery({ query: "(max-width: 576px)" });
@@ -51,6 +54,7 @@ function Landing() {
   const isBelow1050 = useMediaQuery({ query: "(max-width: 1050px)" });
   const [items, setItems] = useState();
   const [loading, setloading] = useState(false);
+  const [loadingSpin, setSpinLoading] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const showModal = () => {
     setIsModalVisible(true);
@@ -69,6 +73,10 @@ function Landing() {
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, []);
+
+  // useEffect(() => {
+  //   setTimeout(setSpinLoading(false), 2000);
+  // }, loadingSpin);
 
   return (
     <div>
@@ -332,6 +340,19 @@ function Landing() {
               onCancel={handleCancel}
               width={1200}
             >
+              {/* <Spin
+                size="large"
+                spinning={loadingSpin}
+                indicator={
+                  <LoadingOutlined
+                    style={{
+                      fontSize: 40,
+                      color: "#ff5c00",
+                    }}
+                    spin
+                  />
+                }
+              > */}
               <Row gutter={[24, 24]}>
                 <Col
                   lg={14}
@@ -426,7 +447,9 @@ function Landing() {
                     </div>
                     <Button
                       block
-                      onClick={handleOk}
+                      onClick={() => {
+                        setSpinLoading(true);
+                      }}
                       type="primary"
                       size="large"
                       style={{
@@ -436,7 +459,7 @@ function Landing() {
                         borderRadius: "25px",
                       }}
                     >
-                      Login
+                      <Link to="/app">Login</Link>
                     </Button>
                     <div>
                       New User?{" "}
@@ -451,6 +474,7 @@ function Landing() {
                   </form>
                 </Col>
               </Row>
+              {/* </Spin> */}
             </Modal>
           </div>
         </Col>
