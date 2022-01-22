@@ -1,4 +1,4 @@
-import { PopupButton } from "@typeform/embed-react";
+import { PopupButton, Sidetab } from "@typeform/embed-react";
 
 const Typeform = (props) => {
   return (
@@ -22,4 +22,9 @@ const Typeform = (props) => {
   );
 };
 
+const Typeform2 = (props) => {
+  return <Sidetab id="IxhcTSuG" buttonText="Signup here &#8594;" />;
+};
+
+export { Typeform2 };
 export default Typeform;

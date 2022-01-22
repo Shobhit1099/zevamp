@@ -17,6 +17,7 @@ import {
 } from "antd";
 import meet from "../../../assets/images/meet.png";
 import Typeform from "../../../components/typeform";
+import Typeform2 from "../../../components/typeform";
 import Faq from "../../../components/faq";
 import { useMediaQuery } from "react-responsive";
 import SwiperCard from "../../../components/swiper";
@@ -35,10 +36,13 @@ import loginDummy1 from "../../../assets/images/loginDummy1.png";
 import loginDummy2 from "../../../assets/images/loginDummy2.png";
 import loginDummy3 from "../../../assets/images/loginDummy3.png";
 import loginDummy4 from "../../../assets/images/loginDummy4.png";
+import { createPopup } from "@typeform/embed";
+import "@typeform/embed/build/css/popup.css";
 
 const { Title } = Typography;
 
 function Landing() {
+    const { toggle } = createPopup("IxhcTSuG");
   const isSmall = useMediaQuery({ query: "(max-width: 768px)" });
   const isNotLarge = useMediaQuery({ query: "(max-width: 992px)" });
   const isTooSmall = useMediaQuery({ query: "(max-width: 576px)" });
@@ -436,9 +440,13 @@ function Landing() {
                     </Button>
                     <div>
                       New User?{" "}
-                      <a className="signup-anchor" style={{ fontWeight: 500 }}>
+                      <span
+                        onClick={toggle}
+                        className="signup-anchor"
+                        style={{ fontWeight: 500 }}
+                      >
                         Signup here &#8594;
-                      </a>
+                      </span>
                     </div>
                   </form>
                 </Col>
