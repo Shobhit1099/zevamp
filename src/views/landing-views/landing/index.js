@@ -81,7 +81,7 @@ function Landing() {
           If you're new here, click below to sign up.
         </div>
       ),
-      duration: 0,
+      duration: 3,
       btn,
       key,
     };
