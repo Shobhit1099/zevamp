@@ -4,6 +4,8 @@ import Logo1 from "../../../assets/svg/brand-icon.svg";
 import { AiFillMail, AiFillLock } from "react-icons/ai";
 import { LoadingOutlined } from "@ant-design/icons";
 import Footer from "../../../components/footer";
+import { css } from "@emotion/react";
+import ClipLoader from "react-spinners/ClipLoader";
 import {
   Row,
   Col,
@@ -17,6 +19,7 @@ import {
   Spin,
   Input,
   Alert,
+  notification,
 } from "antd";
 import meet from "../../../assets/images/meet.png";
 import Typeform from "../../../components/typeform";
@@ -56,6 +59,34 @@ function Landing() {
   const [loading, setloading] = useState(false);
   const [loadingSpin, setSpinLoading] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const key = `open${Date.now()}`;
+  const btn = (
+    <Button
+      type="primary"
+      onClick={() => {
+        notification.close(key);
+        toggle();
+      }}
+    >
+      Sign Up
+    </Button>
+  );
+  const openNotification = () => {
+    const args = {
+      message: <div style={{ fontSize: "18px" }}>Login Failed</div>,
+      description: (
+        <div style={{ marginTop: "10px" }}>
+          You're not signed up yet.
+          <br />
+          If you're new here, click below to sign up.
+        </div>
+      ),
+      duration: 0,
+      btn,
+      key,
+    };
+    notification.error(args);
+  };
   const showModal = () => {
     setIsModalVisible(true);
   };
@@ -75,8 +106,10 @@ function Landing() {
   }, []);
 
   // useEffect(() => {
-  //   setTimeout(setSpinLoading(false), 2000);
-  // }, loadingSpin);
+  //   console.log("SpinLoading Before", loadingSpin);
+  //   setTimeout(setSpinLoading(false), 3000);
+  //   console.log("SpinLoading After", loadingSpin);
+  // }, [loadingSpin]);
 
   return (
     <div>
@@ -340,7 +373,7 @@ function Landing() {
               onCancel={handleCancel}
               width={1200}
             >
-              {/* <Spin
+              <Spin
                 size="large"
                 spinning={loadingSpin}
                 indicator={
@@ -352,129 +385,130 @@ function Landing() {
                     spin
                   />
                 }
-              > */}
-              <Row gutter={[24, 24]}>
-                <Col
-                  lg={14}
-                  xs={24}
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <div style={{ marginRight: "20px" }}>
-                    <img
-                      className="img-fluid"
-                      src={loginDummy1}
-                      height={100}
-                      width={100}
-                    ></img>
-                  </div>
-                  <div style={{ marginRight: "20px" }}>
-                    <img
-                      className="img-fluid"
-                      src={loginDummy2}
-                      height={100}
-                      width={100}
-                    ></img>
-                  </div>
-                  <div style={{ marginRight: "20px" }}>
-                    <img
-                      className="img-fluid"
-                      src={loginDummy3}
-                      height={100}
-                      width={100}
-                    ></img>
-                  </div>
-                  <div style={{ marginRight: "20px" }}>
-                    <img
-                      className="img-fluid"
-                      src={loginDummy4}
-                      height={100}
-                      width={100}
-                    ></img>
-                  </div>
-                </Col>
-                <Col
-                  style={
-                    isNotLarge && {
+              >
+                <Row gutter={[24, 24]}>
+                  <Col
+                    lg={14}
+                    xs={24}
+                    style={{
                       display: "flex",
-                      flexDirection: "column",
                       justifyContent: "center",
                       alignItems: "center",
+                    }}
+                  >
+                    <div style={{ marginRight: "20px" }}>
+                      <img
+                        className="img-fluid"
+                        src={loginDummy1}
+                        height={100}
+                        width={100}
+                      ></img>
+                    </div>
+                    <div style={{ marginRight: "20px" }}>
+                      <img
+                        className="img-fluid"
+                        src={loginDummy2}
+                        height={100}
+                        width={100}
+                      ></img>
+                    </div>
+                    <div style={{ marginRight: "20px" }}>
+                      <img
+                        className="img-fluid"
+                        src={loginDummy3}
+                        height={100}
+                        width={100}
+                      ></img>
+                    </div>
+                    <div style={{ marginRight: "20px" }}>
+                      <img
+                        className="img-fluid"
+                        src={loginDummy4}
+                        height={100}
+                        width={100}
+                      ></img>
+                    </div>
+                  </Col>
+                  <Col
+                    style={
+                      isNotLarge && {
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }
                     }
-                  }
-                  lg={10}
-                  xs={24}
-                >
-                  <div style={{ fontSize: "20px", color: "#98989E" }}>Hey!</div>
-                  <div style={{ fontSize: "24px", fontWeight: 700 }}>
-                    Welcome back
-                  </div>
-                  <form style={{ marginTop: "20px" }}>
-                    <div style={{ marginBottom: "20px" }}>
-                      <div style={{ fontWeight: 500, marginBottom: "5px" }}>
-                        E-Mail or Username
-                      </div>
-                      <Input
-                        size="large"
-                        placeholder="e.g.: elonmusk@mars.com "
-                        prefix={
-                          <AiFillMail
-                            size={20}
-                            style={{ marginTop: "3px" }}
-                            className="text-muted"
-                          />
-                        }
-                      />
+                    lg={10}
+                    xs={24}
+                  >
+                    <div style={{ fontSize: "20px", color: "#98989E" }}>
+                      Hey!
                     </div>
-                    <div style={{ marginBottom: "20px" }}>
-                      <div style={{ fontWeight: 500, marginBottom: "5px" }}>
-                        Password
-                      </div>
-                      <Input
-                        size="large"
-                        placeholder="e.g.: X Æ A-12"
-                        prefix={
-                          <AiFillLock
-                            size={20}
-                            style={{ marginTop: "1px" }}
-                            className="text-muted"
-                          />
-                        }
-                      />
+                    <div style={{ fontSize: "24px", fontWeight: 700 }}>
+                      Welcome back
                     </div>
-                    <Button
-                      block
-                      onClick={() => {
-                        setSpinLoading(true);
-                      }}
-                      type="primary"
-                      size="large"
-                      style={{
-                        maxWidth: "400px",
-                        marginTop: "10px",
-                        marginBottom: "10px",
-                        borderRadius: "25px",
-                      }}
-                    >
-                      <Link to="/app">Login</Link>
-                    </Button>
-                    <div>
-                      New User?{" "}
-                      <span
-                        onClick={toggle}
-                        className="signup-anchor"
-                        style={{ fontWeight: 500 }}
+                    <form style={{ marginTop: "20px" }}>
+                      <div style={{ marginBottom: "20px" }}>
+                        <div style={{ fontWeight: 500, marginBottom: "5px" }}>
+                          E-Mail or Username
+                        </div>
+                        <Input
+                          size="large"
+                          placeholder="e.g.: elonmusk@mars.com "
+                          prefix={
+                            <AiFillMail
+                              size={20}
+                              style={{ marginTop: "3px" }}
+                              className="text-muted"
+                            />
+                          }
+                        />
+                      </div>
+                      <div style={{ marginBottom: "20px" }}>
+                        <div style={{ fontWeight: 500, marginBottom: "5px" }}>
+                          Password
+                        </div>
+                        <Input
+                          size="large"
+                          placeholder="e.g.: X Æ A-12"
+                          prefix={
+                            <AiFillLock
+                              size={20}
+                              style={{ marginTop: "1px" }}
+                              className="text-muted"
+                            />
+                          }
+                        />
+                      </div>
+                      <Button
+                        block
+                        onClick={openNotification}
+                        type="primary"
+                        size="large"
+                        style={{
+                          maxWidth: "400px",
+                          marginTop: "10px",
+                          marginBottom: "10px",
+                          borderRadius: "25px",
+                        }}
                       >
-                        Signup here &#8594;
-                      </span>
-                    </div>
-                  </form>
-                </Col>
-              </Row>
-              {/* </Spin> */}
+                        {/* <Link to="/app">Login</Link> */}
+                        Login
+                      </Button>
+                      <div>
+                        New User?{" "}
+                        <span
+                          onClick={toggle}
+                          className="signup-anchor"
+                          style={{ fontWeight: 500 }}
+                        >
+                          Signup here &#8594;
+                        </span>
+                      </div>
+                    </form>
+                  </Col>
+                </Row>
+              </Spin>
             </Modal>
           </div>
         </Col>
@@ -501,7 +535,6 @@ function Landing() {
           style={isSmall ? { display: "none" } : { maxWidth: "1000px" }}
         >
           <Row gutter={[48, 24]} justify="center">
-            {console.log(items)}
             {items ? (
               items.testimonials.map((item) => {
                 return (
