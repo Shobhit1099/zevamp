@@ -160,7 +160,7 @@ function Footer() {
                         }
                   }
                 >
-                  The unknown knows no rumour' - with a firm belief in these
+                  'The unknown knows no rumour' - with a firm belief in these
                   words, Zevamp aspires to bring everyone along a fruitful
                   journey through interactive meet sessions where they discover
                   their ultimate potential and the fun to be the real you, with
