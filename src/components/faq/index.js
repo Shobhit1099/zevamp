@@ -14,9 +14,10 @@ function Faq() {
   const [items, setItems] = useState();
 
   useEffect(() => {
-    fetch("https://zevamp.herokuapp.com/")
+    fetch("https://zevamp.herokuapp.com")
       .then((res) => res.json())
-      .then((data) => setItems(data));
+      .then((data) => setItems(data))
+      .catch((err) => console.log("ERROR faq", err));
   }, []);
 
   return (
@@ -72,16 +73,44 @@ function Faq() {
               })
             ) : (
               <>
-                <div style={{ backgroundColor: "white", borderRadius: "5px", marginBottom: "10px", padding: "10px" }}>
+                <div
+                  style={{
+                    backgroundColor: "white",
+                    borderRadius: "5px",
+                    marginBottom: "10px",
+                    padding: "10px",
+                  }}
+                >
                   <Skeleton active paragraph={{ rows: 1 }}></Skeleton>
                 </div>
-                <div style={{ backgroundColor: "white", borderRadius: "5px", marginBottom: "10px", padding: "10px" }}>
+                <div
+                  style={{
+                    backgroundColor: "white",
+                    borderRadius: "5px",
+                    marginBottom: "10px",
+                    padding: "10px",
+                  }}
+                >
                   <Skeleton active paragraph={{ rows: 0 }}></Skeleton>
                 </div>
-                <div style={{ backgroundColor: "white", borderRadius: "5px", marginBottom: "10px", padding: "10px" }}>
+                <div
+                  style={{
+                    backgroundColor: "white",
+                    borderRadius: "5px",
+                    marginBottom: "10px",
+                    padding: "10px",
+                  }}
+                >
                   <Skeleton active paragraph={{ rows: 0 }}></Skeleton>
                 </div>
-                <div style={{ backgroundColor: "white", borderRadius: "5px", marginBottom: "10px", padding: "10px" }}>
+                <div
+                  style={{
+                    backgroundColor: "white",
+                    borderRadius: "5px",
+                    marginBottom: "10px",
+                    padding: "10px",
+                  }}
+                >
                   <Skeleton active paragraph={{ rows: 0 }}></Skeleton>
                 </div>
               </>

@@ -7,6 +7,8 @@ const { Title } = Typography;
 
 function Home() {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [items, setItems] = useState();
+
   const showModal = () => {
     setIsModalVisible(true);
   };
@@ -18,6 +20,11 @@ function Home() {
   const handleCancel = () => {
     setIsModalVisible(false);
   };
+  useEffect(() => {
+    fetch("http://localhost:4000/app/home")
+      .then((res) => res.json())
+      .then((data) => setItems(data));
+  }, []);
   return (
     <div>
       <Title level={2}>

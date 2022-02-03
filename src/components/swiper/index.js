@@ -20,9 +20,10 @@ export default function SwiperCard() {
   const [items, setItems] = useState();
 
   useEffect(() => {
-    fetch("https://zevamp.herokuapp.com/")
+    fetch("https://zevamp.herokuapp.com")
       .then((res) => res.json())
-      .then((data) => setItems(data));
+      .then((data) => setItems(data))
+      .catch((err) => console.log("ERROR swiperCard ", err));
   }, []);
 
   return (

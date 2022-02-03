@@ -4,9 +4,12 @@ import Logo1 from "../../../assets/svg/brand-icon.svg";
 import { AiFillMail, AiFillLock } from "react-icons/ai";
 import { LoadingOutlined } from "@ant-design/icons";
 import Footer from "../../../components/footer";
+import axios from "axios";
+import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import { css } from "@emotion/react";
 import ClipLoader from "react-spinners/ClipLoader";
 import {
+  Form,
   Row,
   Col,
   Typography,
@@ -55,11 +58,14 @@ function Landing() {
   const isBelow530 = useMediaQuery({ query: "(max-width: 530px)" });
   const isBelow450 = useMediaQuery({ query: "(max-width: 450px)" });
   const isBelow1050 = useMediaQuery({ query: "(max-width: 1050px)" });
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [items, setItems] = useState();
   const [loading, setloading] = useState(false);
   const [loadingSpin, setSpinLoading] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const key = `open${Date.now()}`;
+  var data;
   const btn = (
     <Button
       type="primary"
@@ -72,21 +78,32 @@ function Landing() {
     </Button>
   );
   const openNotification = () => {
-    const args = {
-      message: <div style={{ fontSize: "18px" }}>Login Failed</div>,
-      description: (
-        <div style={{ marginTop: "10px" }}>
-          You're not signed up yet.
-          <br />
-          If you're new here, click below to sign up.
-        </div>
-      ),
-      duration: 3,
-      btn,
-      key,
-    };
-    notification.error(args);
+    // const args = {
+    //   message: <div style={{ fontSize: "18px" }}>Login Failed</div>,
+    //   description: (
+    //     <div style={{ marginTop: "10px" }}>
+    //       You're not signed up yet.
+    //       <br />
+    //       If you're new here, click below to sign up.
+    //     </div>
+    //   ),
+    //   duration: 3,
+    //   btn,
+    //   key,
+    // };
+    // notification.error(args);
+    data = JSON.stringify({ email: username, password: password });
+    console.log(data);
+    axios
+      .post("https://zevamp.herokuapp/login", data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then(() => console.log("Details Posted"))
+      .catch((err) => console.log(err));
   };
+
   const showModal = () => {
     setIsModalVisible(true);
   };
@@ -100,9 +117,12 @@ function Landing() {
   };
 
   useEffect(() => {
-    fetch("https://zevamp.herokuapp.com/")
+    fetch("https://zevamp.herokuapp.com")
       .then((res) => res.json())
-      .then((data) => setItems(data));
+      .then((data) => setItems(data))
+      .catch((err) => {
+        console.log("ERROR", err);
+      });
   }, []);
 
   // useEffect(() => {
@@ -447,42 +467,82 @@ function Landing() {
                     <div style={{ fontSize: "24px", fontWeight: 700 }}>
                       Welcome back
                     </div>
-                    <form style={{ marginTop: "20px" }}>
+                    <Form
+                      style={{ marginTop: "20px" }}
+                      onFinish={openNotification}
+                      scrollToFirstError
+                    >
                       <div style={{ marginBottom: "20px" }}>
-                        <div style={{ fontWeight: 500, marginBottom: "5px" }}>
-                          E-Mail or Username
-                        </div>
-                        <Input
-                          size="large"
-                          placeholder="e.g.: elonmusk@mars.com "
-                          prefix={
-                            <AiFillMail
-                              size={20}
-                              style={{ marginTop: "3px" }}
-                              className="text-muted"
-                            />
+                        <Form.Item
+                          name="username"
+                          label={
+                            <div style={{ fontWeight: 500 }}>
+                              E-Mail or Username
+                            </div>
                           }
-                        />
+                          rules={[
+                            {
+                              type: "email",
+                              message: "The input is not valid E-mail!",
+                            },
+                            {
+                              required: true,
+                              message: "Please input your E-mail!",
+                            },
+                          ]}
+                        >
+                          <Input
+                            size="large"
+                            onChange={(e) => setUsername(e.target.value)}
+                            placeholder="e.g.: elonmusk@mars.com "
+                            prefix={
+                              <AiFillMail
+                                size={20}
+                                style={{ marginTop: "3px" }}
+                                className="text-muted"
+                              />
+                            }
+                          />
+                        </Form.Item>
                       </div>
                       <div style={{ marginBottom: "20px" }}>
-                        <div style={{ fontWeight: 500, marginBottom: "5px" }}>
-                          Password
-                        </div>
-                        <Input
-                          size="large"
-                          placeholder="e.g.: X Æ A-12"
-                          prefix={
-                            <AiFillLock
-                              size={20}
-                              style={{ marginTop: "1px" }}
-                              className="text-muted"
-                            />
+                        <Form.Item
+                          name="password"
+                          label={
+                            <div style={{ fontWeight: 500 }}>Password</div>
                           }
-                        />
+                          rules={[
+                            {
+                              required: true,
+                              message: "Please input your password!",
+                            },
+                          ]}
+                          hasFeedback
+                        >
+                          <Input.Password
+                            onChange={(e) => setPassword(e.target.value)}
+                            size="large"
+                            placeholder="e.g.: X Æ A-12"
+                            iconRender={(visible) =>
+                              visible ? (
+                                <EyeTwoTone />
+                              ) : (
+                                <EyeInvisibleOutlined />
+                              )
+                            }
+                            prefix={
+                              <AiFillLock
+                                size={20}
+                                style={{ marginTop: "1px" }}
+                                className="text-muted"
+                              />
+                            }
+                          />
+                        </Form.Item>
                       </div>
                       <Button
                         block
-                        onClick={openNotification}
+                        htmlType="submit"
                         type="primary"
                         size="large"
                         style={{
@@ -505,7 +565,7 @@ function Landing() {
                           Signup here &#8594;
                         </span>
                       </div>
-                    </form>
+                    </Form>
                   </Col>
                 </Row>
               </Spin>
