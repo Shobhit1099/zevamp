@@ -1,6 +1,6 @@
 export default {
   login: (auth) => {
-    return fetch("https://zevamp.herokuapp.com/app/login", {
+    return fetch("http://localhost:4000/app/login", {
       method: "post",
       body: JSON.stringify(auth),
       credentials: "include", // Don't forget to specify this if you need cookies
@@ -14,16 +14,12 @@ export default {
     });
   },
   logout: () => {
-    return fetch("https://zevamp.herokuapp.com/app/logout", {
-      headers: { "Access-Control-Allow-Origin": "*" },
-    })
+    return fetch("http://localhost:4000/app/logout")
       .then((res) => res.json())
       .then((data) => data);
   },
   isAuthenticated: () => {
-    return fetch("https://zevamp.herokuapp.com/app/authenticated", {
-      headers: { "Access-Control-Allow-Origin": "*" },
-    }).then((res) => {
+    return fetch("http://localhost:4000/app/authenticated").then((res) => {
       if (res.status !== 401) return res.json().then((data) => data);
       else return { isAuthenticated: false, auth: { username: "" } };
     });
