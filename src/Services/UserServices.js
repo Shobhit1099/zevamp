@@ -1,6 +1,6 @@
 export default {
   getUser: () => {
-    return fetch("http://localhost:4000/app", {
+    return fetch("https://zevamp.herokuapp.com/app", {
       credentials: "include", // Don't forget to specify this if you need cookies
     }).then((response) => {
       if (response.status !== 401) {
@@ -9,7 +9,7 @@ export default {
     });
   },
   getDetails: () => {
-    return fetch("http://localhost:4000")
+    return fetch("https://zevamp.herokuapp.com")
       .then((response) => response.json())
       .then((data) => data)
       .catch((err) => console.log("ERROR IS", err));
