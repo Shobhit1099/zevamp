@@ -7,7 +7,7 @@ import { AuthContext } from "../Context/AuthContext";
 export const Views = (props) => {
   const { auth, setAuth, isAuthenticated, setIsAuthenticated } =
     useContext(AuthContext);
-  //console.log("AUTH: ", auth, " IS AUTHENTICATED: ", isAuthenticated);
+  console.log("AUTH: ", auth, " IS AUTHENTICATED: ", isAuthenticated);
   return (
     <Switch>
       <Route path="/app" key={1}>

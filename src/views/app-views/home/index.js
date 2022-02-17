@@ -29,7 +29,7 @@ function Home() {
   };
   return (
     <div>
-      {console.log("COOKIE", document.cookie)}
+      {console.log("COOKIE", document.cookie, "ITEMS", items)}
       <Title level={2}>
         Hey{" "}
         <span style={{ color: "#FF5C00" }}>
