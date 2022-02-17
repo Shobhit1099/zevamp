@@ -1,11 +1,23 @@
-import React from "react";
+import { useContext, React } from "react";
 import { Typography, Input } from "antd";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import AuthService from "../../../Services/AuthServices";
+import { AuthContext } from "../../../Context/AuthContext";
 
 const { Title } = Typography;
 const { TextArea } = Input;
 
 function Settings() {
+  const { auth, setAuth, isAuthenticated, setIsAuthenticated } =
+    useContext(AuthContext);
+  const onClickLogoutHandler = () => {
+    AuthService.logout().then((data) => {
+      if (data.success) {
+        setAuth(data.auth);
+        setIsAuthenticated(false);
+      }
+    });
+  };
   return (
     <div>
       <Title level={3} style={{ textDecoration: "underline" }}>
@@ -20,10 +32,14 @@ function Settings() {
           fontWeight: 700,
         }}
         className="settings-anchor"
+        onClick={onClickLogoutHandler}
       >
         Logout
       </a>
-      <Title level={3} style={{marginTop: "30px", textDecoration: "underline" }}>
+      <Title
+        level={3}
+        style={{ marginTop: "30px", textDecoration: "underline" }}
+      >
         <a className="settings-anchor">Email change request</a>
       </Title>
       <Title level={3} style={{ textDecoration: "underline" }}>

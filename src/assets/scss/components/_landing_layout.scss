@@ -1,0 +1,57 @@
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected::after {
+  border-bottom: 0px !important;
+}
+
+.ant-menu {
+  border-bottom: 0px;
+}
+
+.ant-menu-item-selected[class~="landing-menu-item"] {
+  color: white !important;
+  background-color: #393939;
+}
+
+.ant-menu-item[class~="landing-menu-item"] {
+  border-radius: 15px !important;
+  margin-left: 5px;
+  height: 35px;
+}
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active::after {
+  border-bottom: 0px;
+}
+
+.ant-menu-item[class~="landing-menu-item"]:hover {
+  color: #ff5c00 !important;
+}
+
+.ant-menu-item-selected[class~="landing-menu-item"]:hover {
+  color: white !important;
+  background-color: #797979;
+  border-bottom: 0px !important;
+}
+
+.landing-menu-item {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.hamburger-react {
+  position: absolute !important;
+  right: 5vw;
+  top: 25%;
+}
+
+.app-small-header {
+  height: 80px !important;
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+}
+
+//################################
+//IMP
+.ant-tooltip {
+  display: none;
+}
+//#################################

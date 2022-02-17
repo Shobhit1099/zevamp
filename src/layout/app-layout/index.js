@@ -35,6 +35,7 @@ export default function AppLayout(props) {
           <div style={{ fontWeight: 500 }}>Email account verified!</div>
         </div>
         <Menu
+          className="app-menu"
           theme="dark"
           style={{
             backgroundColor: "#011627",
@@ -45,19 +46,35 @@ export default function AppLayout(props) {
           mode="inline"
           defaultSelectedKeys={["1"]}
         >
-          <Menu.Item key="1" icon={<HiOutlineViewGrid size={20} />}>
+          <Menu.Item
+            className="app-menu-item"
+            key="1"
+            icon={<HiOutlineViewGrid size={20} />}
+          >
             Home
             <Link to="/app/home"></Link>
           </Menu.Item>
-          <Menu.Item key="2" icon={<AiOutlineYoutube size={20} />}>
+          <Menu.Item
+            className="app-menu-item"
+            key="2"
+            icon={<AiOutlineYoutube size={20} />}
+          >
             audio-box
             <Link to="/app/audio-box"></Link>
           </Menu.Item>
-          <Menu.Item key="3" icon={<FiMessageCircle size={20} />}>
+          <Menu.Item
+            className="app-menu-item"
+            key="3"
+            icon={<FiMessageCircle size={20} />}
+          >
             Meeting Feedback
             <Link to="/app/meeting-feedback"></Link>
           </Menu.Item>
-          <Menu.Item key="4" icon={<FiSettings size={20} />}>
+          <Menu.Item
+            className="app-menu-item"
+            key="4"
+            icon={<FiSettings size={20} />}
+          >
             Settings
             <Link to="/app/settings"></Link>
           </Menu.Item>
@@ -87,6 +104,7 @@ export default function AppLayout(props) {
       </Sider>
       <Layout style={{ backgroundColor: "#011627" }}>
         <Content
+          className="app-content"
           style={{
             margin: "30px 20px 30px 20px",
             borderRadius: "48px",

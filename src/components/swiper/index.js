@@ -10,6 +10,7 @@ import user1 from "../../assets/images/users/user1.jpg";
 import user2 from "../../assets/images/users/user2.jpeg";
 import user3 from "../../assets/images/users/user3.jpeg";
 import { useMediaQuery } from "react-responsive";
+import UserService from "../../Services/UserServices";
 
 SwiperCore.use([Navigation]);
 
@@ -20,10 +21,7 @@ export default function SwiperCard() {
   const [items, setItems] = useState();
 
   useEffect(() => {
-    fetch("https://zevamp.herokuapp.com")
-      .then((res) => res.json())
-      .then((data) => setItems(data))
-      .catch((err) => console.log("ERROR swiperCard ", err));
+    UserService.getDetails().then((data) => setItems(data));
   }, []);
 
   return (
@@ -39,11 +37,12 @@ export default function SwiperCard() {
         className="mySwiper"
       >
         {items ? (
-          items.testimonials.map((item) => {
+          items.testimonials.map((item, index) => {
             return (
-              <Col>
-                <SwiperSlide>
+              <Col key={index}>
+                <SwiperSlide key={index}>
                   <Testimonial
+                    key={index}
                     image={item.img}
                     name={item.uname}
                     data={item.review}

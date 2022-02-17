@@ -1,13 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button, Col, Layout, Modal, Row, Typography, Card } from "antd";
 import MatchCard from "../../../components/matchCard";
+import UserService from "../../../Services/UserServices";
+import { AuthContext } from "../../../Context/AuthContext";
 
 const { Content } = Layout;
 const { Title } = Typography;
 
 function Home() {
+  const authContext = useContext(AuthContext);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [items, setItems] = useState();
+
+  useEffect(() => {
+    UserService.getUser().then((data) => setItems(data));
+  }, []);
 
   const showModal = () => {
     setIsModalVisible(true);
@@ -20,16 +27,15 @@ function Home() {
   const handleCancel = () => {
     setIsModalVisible(false);
   };
-  useEffect(() => {
-    fetch("http://localhost:4000/app/home")
-      .then((res) => res.json())
-      .then((data) => setItems(data));
-  }, []);
   return (
     <div>
+      {console.log("COOKIE", document.cookie)}
       <Title level={2}>
-        Hey <span style={{ color: "#FF5C00" }}>Hardik</span> - here are your
-        upcoming Zevamp meets:
+        Hey{" "}
+        <span style={{ color: "#FF5C00" }}>
+          {items && items.userDetails.Name}
+        </span>{" "}
+        - here are your upcoming Zevamp meets:
       </Title>
       <Row gutter={[40, 0]}>
         <Col

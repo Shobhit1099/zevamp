@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Logo1 from "../../../assets/svg/brand-icon.svg";
 import { AiFillMail, AiFillLock } from "react-icons/ai";
 import { LoadingOutlined } from "@ant-design/icons";
-import Footer from "../../../components/footer";
-import axios from "axios";
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
-import { css } from "@emotion/react";
-import ClipLoader from "react-spinners/ClipLoader";
+import { useHistory } from "react-router-dom";
+import UserService from "../../../Services/UserServices";
 import {
   Form,
   Row,
@@ -16,17 +13,13 @@ import {
   Card,
   Button,
   Avatar,
-  Rate,
-  Skeleton,
   Modal,
   Spin,
   Input,
-  Alert,
   notification,
 } from "antd";
 import meet from "../../../assets/images/meet.png";
 import Typeform from "../../../components/typeform";
-import Typeform2 from "../../../components/typeform";
 import Faq from "../../../components/faq";
 import { useMediaQuery } from "react-responsive";
 import SwiperCard from "../../../components/swiper";
@@ -45,6 +38,9 @@ import loginDummy1 from "../../../assets/images/loginDummy1.png";
 import loginDummy2 from "../../../assets/images/loginDummy2.png";
 import loginDummy3 from "../../../assets/images/loginDummy3.png";
 import loginDummy4 from "../../../assets/images/loginDummy4.png";
+import Notification from "../../../components/notification";
+import AuthService from "../../../Services/AuthServices";
+import { AuthContext } from "../../../Context/AuthContext";
 import { createPopup } from "@typeform/embed";
 import "@typeform/embed/build/css/popup.css";
 
@@ -52,20 +48,19 @@ const { Title } = Typography;
 
 function Landing() {
   const { toggle } = createPopup("IxhcTSuG");
+  const [user, setUser] = useState({ username: "", password: "" });
+  const authContext = useContext(AuthContext);
   const isSmall = useMediaQuery({ query: "(max-width: 768px)" });
   const isNotLarge = useMediaQuery({ query: "(max-width: 992px)" });
   const isTooSmall = useMediaQuery({ query: "(max-width: 576px)" });
   const isBelow530 = useMediaQuery({ query: "(max-width: 530px)" });
   const isBelow450 = useMediaQuery({ query: "(max-width: 450px)" });
   const isBelow1050 = useMediaQuery({ query: "(max-width: 1050px)" });
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
   const [items, setItems] = useState();
-  const [loading, setloading] = useState(false);
+  let history = useHistory();
   const [loadingSpin, setSpinLoading] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const key = `open${Date.now()}`;
-  var data;
   const btn = (
     <Button
       type="primary"
@@ -77,31 +72,59 @@ function Landing() {
       Sign Up
     </Button>
   );
-  const openNotification = () => {
-    // const args = {
-    //   message: <div style={{ fontSize: "18px" }}>Login Failed</div>,
-    //   description: (
-    //     <div style={{ marginTop: "10px" }}>
-    //       You're not signed up yet.
-    //       <br />
-    //       If you're new here, click below to sign up.
-    //     </div>
-    //   ),
-    //   duration: 3,
-    //   btn,
-    //   key,
-    // };
-    // notification.error(args);
-    data = JSON.stringify({ email: username, password: password });
-    console.log(data);
-    axios
-      .post("https://zevamp.herokuapp/login", data, {
-        headers: {
-          "Content-Type": "application/json",
-        },
+  const onChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = (e) => {
+    // e.preventDefault();
+    AuthService.login(user)
+      .then((data) => {
+        const { isAuthenticated, auth } = data;
+        if (isAuthenticated) {
+          authContext.setAuth(auth);
+          authContext.setIsAuthenticated(isAuthenticated);
+          const args = {
+            message: <div style={{ fontSize: "18px" }}>Login Successful</div>,
+            description: <div style={{ marginTop: "10px" }}>Enjoy!</div>,
+            duration: 3,
+            key,
+          };
+          notification.success(args);
+          history.push("/app/home");
+        } else {
+          const args = {
+            message: <div style={{ fontSize: "18px" }}>Login Failed</div>,
+            description: (
+              <div style={{ marginTop: "10px" }}>
+                You're not signed up yet.
+                <br />
+                If you're new here, click below to sign up.
+              </div>
+            ),
+            duration: 3,
+            btn,
+            key,
+          };
+          notification.error(args);
+        }
       })
-      .then(() => console.log("Details Posted"))
-      .catch((err) => console.log(err));
+      .catch(() => {
+        const args = {
+          message: <div style={{ fontSize: "18px" }}>Login Failed</div>,
+          description: (
+            <div style={{ marginTop: "10px" }}>
+              Some error occured.
+              <br />
+              If you're new here, click below to sign up.
+            </div>
+          ),
+          duration: 3,
+          btn,
+          key,
+        };
+        notification.error(args);
+      });
   };
 
   const showModal = () => {
@@ -117,36 +140,12 @@ function Landing() {
   };
 
   useEffect(() => {
-    fetch("https://zevamp.herokuapp.com")
-      .then((res) => res.json())
-      .then((data) => setItems(data))
-      .catch((err) => {
-        console.log("ERROR", err);
-      });
+    UserService.getDetails().then((data) => setItems(data));
   }, []);
-
-  // useEffect(() => {
-  //   console.log("SpinLoading Before", loadingSpin);
-  //   setTimeout(setSpinLoading(false), 3000);
-  //   console.log("SpinLoading After", loadingSpin);
-  // }, [loadingSpin]);
 
   return (
     <div>
       <Row gutter={[0, 40]} justify="center" style={{ padding: "30px 40px" }}>
-        <Col
-          span={24}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <Link to={"/"}>
-            <img src={Logo1} />
-          </Link>
-        </Col>
-
         <Col
           style={{
             display: "flex",
@@ -162,6 +161,7 @@ function Landing() {
                 ? {
                     position: "absolute",
                     left: "7vw",
+                    top: "6vh",
                     boxShadow: "4px 5px 7px 2px rgba(0,0,0,0.2)",
                   }
                 : { display: "none" }
@@ -217,7 +217,7 @@ function Landing() {
                 ? {
                     position: "absolute",
                     right: "15vw",
-                    top: "-25px",
+                    top: "2vh",
                     boxShadow: "4px 5px 7px 2px rgba(0,0,0,0.2)",
                   }
                 : { display: "none" }
@@ -469,7 +469,7 @@ function Landing() {
                     </div>
                     <Form
                       style={{ marginTop: "20px" }}
-                      onFinish={openNotification}
+                      onFinish={onSubmit}
                       scrollToFirstError
                     >
                       <div style={{ marginBottom: "20px" }}>
@@ -492,8 +492,9 @@ function Landing() {
                           ]}
                         >
                           <Input
+                            name="username"
                             size="large"
-                            onChange={(e) => setUsername(e.target.value)}
+                            onChange={onChange}
                             placeholder="e.g.: elonmusk@mars.com "
                             prefix={
                               <AiFillMail
@@ -520,7 +521,8 @@ function Landing() {
                           hasFeedback
                         >
                           <Input.Password
-                            onChange={(e) => setPassword(e.target.value)}
+                            name="password"
+                            onChange={onChange}
                             size="large"
                             placeholder="e.g.: X Æ A-12"
                             iconRender={(visible) =>
@@ -596,10 +598,11 @@ function Landing() {
         >
           <Row gutter={[48, 24]} justify="center">
             {items ? (
-              items.testimonials.map((item) => {
+              items.testimonials.map((item, index) => {
                 return (
-                  <Col lg={8}>
+                  <Col lg={8} key={index}>
                     <Testimonial
+                      key={index}
                       image={item.img}
                       name={item.uname}
                       data={item.review}
@@ -676,9 +679,6 @@ function Landing() {
           }}
         >
           <Faq />
-        </Col>
-        <Col>
-          <Footer />
         </Col>
       </Row>
     </div>

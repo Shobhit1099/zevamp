@@ -2,29 +2,29 @@
   height: 100vh !important;
 }
 
-.ant-menu-item {
+.app-menu-item {
   height: 50px !important;
   font-size: 15px !important;
 }
 
-.ant-menu-item-selected {
+.ant-menu-item-selected[class~="app-menu-item"] {
   background-color: white !important;
   width: 111% !important;
   border-radius: 25px 0px 0px 25px !important;
 }
 
-.ant-menu-item-selected > .ant-menu-title-content {
+.ant-menu-item-selected[class~="app-menu-item"] .ant-menu-title-content {
   color: #fb6d3a !important;
 }
-.ant-menu-item-icon {
+.app-menu-item .ant-menu-item-icon {
   color: #fb6d3a !important;
 }
 
-.ant-menu {
+.app-menu {
   padding-left: 15% !important;
 }
 
-.ant-layout-content {
+.app-content {
   background-color: white;
 }
 

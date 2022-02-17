@@ -5,6 +5,7 @@ import { RightOutlined } from "@ant-design/icons";
 import img1 from "../../assets/images/Group_32.png";
 import img2 from "../../assets/images/Group_5.png";
 import { useMediaQuery } from "react-responsive";
+import UserService from "../../Services/UserServices";
 
 const { Panel } = Collapse;
 
@@ -14,10 +15,7 @@ function Faq() {
   const [items, setItems] = useState();
 
   useEffect(() => {
-    fetch("https://zevamp.herokuapp.com")
-      .then((res) => res.json())
-      .then((data) => setItems(data))
-      .catch((err) => console.log("ERROR faq", err));
+    UserService.getDetails().then((data) => setItems(data));
   }, []);
 
   return (
