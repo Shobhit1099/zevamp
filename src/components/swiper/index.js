@@ -26,18 +26,18 @@ export default function SwiperCard() {
 
   return (
     <Row>
-      <Swiper
-        style={{ padding: "5px 0px" }}
-        centeredSlides
-        slidesPerView={
-          isTooSmall ? (isTooMuchSmall ? (isSmallest ? 1.3 : 1.5) : 1.8) : 2
-        }
-        initialSlide="1"
-        spaceBetween={isTooMuchSmall ? (isSmallest ? 20 : 30) : 40}
-        className="mySwiper"
-      >
-        {items ? (
-          items.testimonials.map((item, index) => {
+      {items ? (
+        <Swiper
+          style={{ padding: "5px 0px" }}
+          centeredSlides
+          slidesPerView={
+            isTooSmall ? (isTooMuchSmall ? (isSmallest ? 1.3 : 1.5) : 1.8) : 2
+          }
+          initialSlide="1"
+          spaceBetween={isTooMuchSmall ? (isSmallest ? 20 : 30) : 40}
+          className="mySwiper"
+        >
+          {items.testimonials.map((item, index) => {
             return (
               <Col key={index}>
                 <SwiperSlide key={index}>
@@ -51,27 +51,36 @@ export default function SwiperCard() {
                 </SwiperSlide>
               </Col>
             );
-          })
-        ) : (
-          <>
-            <Col>
-              <SwiperSlide>
-                <Testimonial loading={true} />
-              </SwiperSlide>
-            </Col>
-            <Col>
-              <SwiperSlide>
-                <Testimonial loading={true} />
-              </SwiperSlide>
-            </Col>
-            <Col>
-              <SwiperSlide>
-                <Testimonial loading={true} />
-              </SwiperSlide>
-            </Col>
-          </>
-        )}
-      </Swiper>
+          })}
+        </Swiper>
+      ) : (
+        <Swiper
+          style={{ padding: "5px 0px" }}
+          centeredSlides
+          slidesPerView={
+            isTooSmall ? (isTooMuchSmall ? (isSmallest ? 1.3 : 1.5) : 1.8) : 2
+          }
+          initialSlide="1"
+          spaceBetween={isTooMuchSmall ? (isSmallest ? 20 : 30) : 40}
+          className="mySwiper"
+        >
+          <Col>
+            <SwiperSlide>
+              <Testimonial loading={true} />
+            </SwiperSlide>
+          </Col>
+          <Col>
+            <SwiperSlide>
+              <Testimonial loading={true} />
+            </SwiperSlide>
+          </Col>
+          <Col>
+            <SwiperSlide>
+              <Testimonial loading={true} />
+            </SwiperSlide>
+          </Col>
+        </Swiper>
+      )}
     </Row>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import Footer from "../../components/footer";
 import { LandingViews } from "../../views/landing-views";
@@ -15,6 +15,7 @@ const { Panel } = Collapse;
 export const LandingLayout = () => {
   const isSmall = useMediaQuery({ query: "(max-width: 768px)" });
   const isTooSmall = useMediaQuery({ query: "(max-width: 576px)" });
+  const [isOpen, setOpen] = useState(false);
   return (
     <div>
       <Layout className="layout">
@@ -48,10 +49,10 @@ export const LandingLayout = () => {
             </Menu.Item>
             <Menu.Item key="2" className="landing-menu-item">
               Roadmaps
-              <Link to=""></Link>
+              <a href="https://unlock-zevamp.carrd.co/"></a>
             </Menu.Item>
             <Menu.Item key="3" className="landing-menu-item">
-              Connect
+              Contact
               <Link to=""></Link>
             </Menu.Item>
           </Menu>
@@ -59,7 +60,7 @@ export const LandingLayout = () => {
         <Collapse
           ghost
           expandIcon={() => {
-            return <Hamburger />;
+            return <Hamburger rounded toggled={isOpen} toggle={setOpen} />;
           }}
           expandIconPosition="right"
           style={
@@ -109,10 +110,10 @@ export const LandingLayout = () => {
               </Menu.Item>
               <Menu.Item key="2" className="landing-menu-item">
                 Roadmaps
-                <Link to=""></Link>
+              <a href="https://unlock-zevamp.carrd.co/"></a>
               </Menu.Item>
               <Menu.Item key="3" className="landing-menu-item">
-                Connect
+                Contact
                 <Link to=""></Link>
               </Menu.Item>
             </Menu>
