@@ -7,6 +7,7 @@ export const LandingViews = () => {
     <Suspense fallback={<Landing/>}>
       <Switch>
         <Route exact path={`/`} component={lazy(() => import("./landing"))} />
+        <Route exact path={`/roadmap`} component={lazy(() => import("./roadmap"))} />
         <Redirect from={`/`} to={`/`} />
       </Switch>
     </Suspense>

@@ -468,7 +468,15 @@ function Landing() {
                       Welcome back
                     </div>
                     <Form
-                      style={{ marginTop: "20px" }}
+                      style={
+                        isNotLarge
+                          ? {
+                              marginTop: "20px",
+                              display: "flex",
+                              flexDirection: "column",
+                            }
+                          : { marginTop: "20px" }
+                      }
                       onFinish={onSubmit}
                       scrollToFirstError
                     >
@@ -525,6 +533,11 @@ function Landing() {
                             onChange={onChange}
                             size="large"
                             placeholder="e.g.: X Æ A-12"
+                            style={
+                              isNotLarge && !isTooSmall
+                                ? { marginLeft: "66px" }
+                                : {}
+                            }
                             iconRender={(visible) =>
                               visible ? (
                                 <EyeTwoTone />
@@ -547,17 +560,33 @@ function Landing() {
                         htmlType="submit"
                         type="primary"
                         size="large"
-                        style={{
-                          maxWidth: "400px",
-                          marginTop: "10px",
-                          marginBottom: "10px",
-                          borderRadius: "25px",
-                        }}
+                        style={
+                          isNotLarge & !isTooSmall
+                            ? {
+                                alignSelf: "center",
+                                maxWidth: "400px",
+                                marginTop: "10px",
+                                marginBottom: "10px",
+                                borderRadius: "25px",
+                              }
+                            : {
+                                maxWidth: "400px",
+                                marginTop: "10px",
+                                marginBottom: "10px",
+                                borderRadius: "25px",
+                              }
+                        }
                       >
                         {/* <Link to="/app">Login</Link> */}
                         Login
                       </Button>
-                      <div>
+                      <div
+                        style={
+                          isNotLarge && !isTooSmall
+                            ? { alignSelf: "center" }
+                            : {}
+                        }
+                      >
                         New User?{" "}
                         <span
                           onClick={toggle}

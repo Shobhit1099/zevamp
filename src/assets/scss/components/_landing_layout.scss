@@ -6,6 +6,14 @@
   border-bottom: 0px;
 }
 
+a {
+  color: #ff5c00;
+}
+
+a:hover {
+  color: #fa823c;
+}
+
 .ant-menu-item-selected[class~="landing-menu-item"] {
   color: white !important;
   background-color: #393939;

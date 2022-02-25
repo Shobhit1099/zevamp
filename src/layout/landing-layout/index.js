@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
 import Footer from "../../components/footer";
 import { LandingViews } from "../../views/landing-views";
 import { Layout, Menu, Collapse } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import Logo2 from "../../assets/svg/brand-icon-nav-logo.svg";
 import Logo1 from "../../assets/svg/brand-icon.svg";
 import { useMediaQuery } from "react-responsive";
 import { Sling as Hamburger } from "hamburger-react";
+import MailToButton from "../../components/mailButton";
 
 const { Header, Content } = Layout;
 const { Panel } = Collapse;
@@ -16,6 +16,8 @@ export const LandingLayout = () => {
   const isSmall = useMediaQuery({ query: "(max-width: 768px)" });
   const isTooSmall = useMediaQuery({ query: "(max-width: 576px)" });
   const [isOpen, setOpen] = useState(false);
+  const location = useLocation();
+
   return (
     <div>
       <Layout className="layout">
@@ -42,20 +44,25 @@ export const LandingLayout = () => {
               <img src={Logo1} height={40} />
             </Link>
           </div>
-          <Menu theme="light" mode="horizontal" defaultSelectedKeys="1">
-            <Menu.Item key="1" className="landing-menu-item">
-              Home
-              <Link to=""></Link>
-            </Menu.Item>
-            <Menu.Item key="2" className="landing-menu-item">
-              Roadmaps
-              <a href="https://unlock-zevamp.carrd.co/"></a>
-            </Menu.Item>
-            <Menu.Item key="3" className="landing-menu-item">
-              Contact
-              <Link to=""></Link>
-            </Menu.Item>
-          </Menu>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Menu
+              theme="light"
+              mode="horizontal"
+              defaultSelectedKeys={location.pathname}
+            >
+              <Menu.Item key="/" className="landing-menu-item">
+                Home
+                <Link to="/"></Link>
+              </Menu.Item>
+              <Menu.Item key="/roadmap" className="landing-menu-item">
+                Roadmaps
+                <Link to="/roadmap"></Link>
+              </Menu.Item>
+            </Menu>
+            <div style={{ marginLeft: "20px" }}>
+              <MailToButton label="Contact" mailto="mailto:team@zevamp.com" />
+            </div>
+          </div>
         </Header>
         <Collapse
           ghost
@@ -98,25 +105,25 @@ export const LandingLayout = () => {
             }
             key="1"
           >
-            <Menu
-              theme="light"
-              mode="horizontal"
-              style={{ display: "flex", justifyContent: "center" }}
-              defaultSelectedKeys="1"
-            >
-              <Menu.Item key="1" className="landing-menu-item">
-                Home
-                <Link to=""></Link>
-              </Menu.Item>
-              <Menu.Item key="2" className="landing-menu-item">
-                Roadmaps
-              <a href="https://unlock-zevamp.carrd.co/"></a>
-              </Menu.Item>
-              <Menu.Item key="3" className="landing-menu-item">
-                Contact
-                <Link to=""></Link>
-              </Menu.Item>
-            </Menu>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Menu
+                theme="light"
+                mode="horizontal"
+                defaultSelectedKeys={location.pathname}
+              >
+                <Menu.Item key="/" className="landing-menu-item">
+                  Home
+                  <Link to="/"></Link>
+                </Menu.Item>
+                <Menu.Item key="/roadmap" className="landing-menu-item">
+                  Roadmaps
+                  <Link to="/roadmap"></Link>
+                </Menu.Item>
+              </Menu>
+              <div style={{ marginLeft: "20px" }}>
+                <MailToButton label="Contact" mailto="mailto:team@zevamp.com" />
+              </div>
+            </div>
           </Panel>
         </Collapse>
         <Content

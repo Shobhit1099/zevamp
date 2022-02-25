@@ -2,6 +2,18 @@
   height: 100vh !important;
 }
 
+.ant-modal-close {
+  color: grey;
+}
+
+.app-menu {
+  padding-left: 15% !important;
+}
+
+.app-content {
+  background-color: white;
+}
+
 .app-menu-item {
   height: 50px !important;
   font-size: 15px !important;
@@ -20,12 +32,69 @@
   color: #fb6d3a !important;
 }
 
-.app-menu {
-  padding-left: 15% !important;
+.app-menu-item-mobile {
+  display: inline-flex !important;
+  align-items: center !important;
+  font-size: 17px !important;
 }
 
-.app-content {
-  background-color: white;
+.ant-menu-item-selected[class~="app-menu-item-mobile"] {
+  background-color: white !important;
+  margin-top: -1px !important;
+  border-radius: 0px 0px 50px 50px !important;
+}
+
+.ant-menu-item[class~="app-menu-item-mobile"] .ant-menu-title-content {
+  color: #fb6d3a !important;
+}
+
+.app-menu-item-mobile .ant-menu-item-icon {
+  color: #fb6d3a !important;
+}
+
+.app-menu-item-mobile,
+.ant-menu-title-content,
+svg {
+  margin-top: 7px;
+}
+
+.app-menu-item-mobile,
+.ant-menu-title-content {
+  padding: 5px !important;
+  height: 60px;
+}
+
+.app-menu-item-tablet {
+  display: inline-flex !important;
+  align-items: center !important;
+  font-size: 17px !important;
+}
+
+.ant-menu-item-selected[class~="app-menu-item-tablet"] {
+  background-color: white !important;
+  margin-top: -1px !important;
+  border-radius: 0px 0px 25px 25px !important;
+}
+
+.ant-menu-item-selected[class~="app-menu-item-tablet"] .ant-menu-title-content {
+  color: #fb6d3a !important;
+}
+
+.app-menu-item-tablet .ant-menu-item-icon {
+  color: #fb6d3a !important;
+}
+
+.app-menu-item-tablet,
+.ant-menu-title-content,
+svg {
+  margin-top: 0px;
+}
+
+.app-menu-item-tablet,
+.ant-menu-title-content {
+  display: flex;
+  align-items: center;
+  height: 60px;
 }
 
 .Avatar {
@@ -40,10 +109,6 @@
 
 .join-meet-button:hover {
   color: #ff975c !important;
-}
-
-.ant-modal-close {
-  color: grey;
 }
 
 .contact-anchor {
